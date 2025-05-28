@@ -1,102 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Resume - Uday Kiran</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #f5f5f5;
-      margin: 0;
-      padding: 0;
-      color: #333;
-    }
-    .container {
-      max-width: 850px;
-      margin: auto;
-      padding: 30px 20px;
-    }
-    h1 {
-      color: #1976d2;
-    }
-    h2 {
-      border-bottom: 2px solid #1976d2;
-      padding-bottom: 5px;
-      margin-top: 30px;
-    }
-    ul {
-      padding-left: 20px;
-    }
-    a {
-      color: #1976d2;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .links a {
-      margin-right: 15px;
-      font-weight: bold;
-    }
-    .resume-btn {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 10px 20px;
-      background-color: #1976d2;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      transition: background-color 0.3s;
-    }
-    .resume-btn:hover {
-      background-color: #125ea9;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>Bhupathi Uday Kiran</h1>
-    <div class="links">
-      <a href="mailto:udaykiranbhupathi5@gmail.com" target="_blank">Email</a>
-      <a href="https://www.linkedin.com/in/uday-kiran-8a9781235/" target="_blank">LinkedIn</a>
-      <a href="https://github.com/Kiranudaybhupathi" target="_blank">GitHub</a>
-    </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bhupathi Uday Kiran | Full Stack Developer</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  </head>
+  <body class="bg-gray-50 text-gray-800 font-sans leading-relaxed">
+    <!-- Header -->
+    <header class="bg-white shadow sticky top-0 z-50">
+      <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+        <h1 class="text-2xl font-bold text-blue-600">Uday Kiran</h1>
+        <nav>
+          <ul class="flex space-x-6 text-sm font-semibold">
+            <li><a href="#about" class="hover:text-blue-600">About</a></li>
+            <li><a href="#projects" class="hover:text-blue-600">Projects</a></li>
+            <li><a href="#resume" class="hover:text-blue-600">Resume</a></li>
+            <li><a href="#contact" class="hover:text-blue-600">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
-    <a class="resume-btn" href="https://kiranudaybhupathi.github.io/Resume-/" target="_blank">
-      📄 View Live Resume
-    </a>
+    <!-- Hero -->
+    <section class="bg-gradient-to-br from-blue-600 to-indigo-700 text-white py-16 text-center">
+      <img
+        src="profile.jpg"
+        alt="Bhupathi Uday Kiran"
+        class="mx-auto w-32 h-32 rounded-full border-4 border-white shadow-md object-cover"
+      />
+      <h2 class="text-4xl font-bold mt-6">Bhupathi Uday Kiran</h2>
+      <p class="text-lg mt-2">Full Stack Developer | MERN & Java | E-commerce Specialist</p>
+      <div class="mt-4 space-x-4">
+        <a
+          href="https://www.linkedin.com/in/uday-kiran-8a9781235/"
+          target="_blank"
+          class="bg-white text-blue-600 px-4 py-2 rounded shadow hover:bg-gray-100 font-medium"
+        >LinkedIn</a>
+        <a
+          href="https://github.com/Kiranudaybhupathi"
+          target="_blank"
+          class="bg-white text-blue-600 px-4 py-2 rounded shadow hover:bg-gray-100 font-medium"
+        >GitHub</a>
+        <a
+          href="mailto:udaykiranbhupathi5@gmail.com"
+          class="bg-white text-blue-600 px-4 py-2 rounded shadow hover:bg-gray-100 font-medium"
+        >Email</a>
+      </div>
+    </section>
 
-    <h2>Profile</h2>
-    <p>Full Stack Developer (MERN Stack, Java) passionate about building scalable web applications and intuitive user experiences.</p>
+    <!-- About -->
+    <section class="max-w-4xl mx-auto px-6 py-12" id="about">
+      <h3 class="text-3xl font-semibold mb-6 border-b pb-2 border-blue-600 inline-block">About Me</h3>
+      <p class="text-gray-700 text-lg">
+        I am a dedicated Full Stack Developer with a strong command of the MERN stack and Java.
+        My expertise lies in crafting scalable and responsive e-commerce platforms and web applications
+        that offer seamless user experiences. I believe in clean code, strong architecture, and continuous learning.
+      </p>
+    </section>
 
-    <h2>Skills</h2>
-    <ul>
-      <li>MERN Stack: MongoDB, Express.js, React.js, Node.js</li>
-      <li>Frontend: HTML, CSS, JavaScript, Tailwind, Bootstrap</li>
-      <li>Tools: Git, GitHub, VS Code, Postman</li>
-      <li>Deployment: Vercel, Render, GitHub Pages</li>
-    </ul>
+    <!-- Projects -->
+    <section class="bg-gray-100 py-12" id="projects">
+      <div class="max-w-6xl mx-auto px-6">
+        <h3 class="text-3xl font-semibold mb-8 text-center text-blue-700">Projects</h3>
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Project: Ecommerce App -->
+          <div class="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition">
+            <h4 class="text-xl font-semibold mb-2">Ecommerce Web Application</h4>
+            <p class="text-gray-600">
+              A full-featured ecommerce platform built using React, Node.js, Express, and MongoDB.
+              Includes user authentication, product search, cart functionality, and admin dashboard.
+            </p>
+            <div class="mt-4 flex space-x-4">
+              <a
+                href="https://kiranudaybhupathi.github.io/Ecommerce-/"
+                target="_blank"
+                class="text-white bg-blue-600 px-4 py-2 rounded shadow hover:bg-blue-700 transition"
+              >🔗 Live Demo</a>
+              <a
+                href="https://github.com/Kiranudaybhupathi/Ecommerce-"
+                target="_blank"
+                class="text-blue-600 border border-blue-600 px-4 py-2 rounded hover:bg-blue-50 transition"
+              >GitHub Repo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <h2>Experience</h2>
-    <p><strong>Freelance Developer</strong> – Built and deployed full-stack ecommerce platforms with features like user authentication, cart functionality, payment integration, and admin dashboards.</p>
+    <!-- Resume -->
+    <section class="max-w-4xl mx-auto px-6 py-12" id="resume">
+      <h3 class="text-3xl font-semibold mb-6 text-blue-700">Resume</h3>
+      <p class="text-gray-700 text-lg mb-4">
+        Want a quick summary of my work, skills, and experience? Click the button below to view or download my professional resume.
+      </p>
+      <a
+        href="https://kiranudaybhupathi.github.io/Resume-/"
+        target="_blank"
+        class="inline-block bg-blue-600 text-white px-6 py-3 rounded-full text-lg shadow hover:bg-blue-700 transition"
+      >
+        📄 View Resume
+      </a>
+    </section>
 
-    <h2>Projects</h2>
-    <ul>
-      <li>
-        <strong>Ecommerce Website</strong> – Full MERN stack project with live demo:
-        <br />
-        🔗 <a href="https://kiranudaybhupathi.github.io/Ecommerce-/" target="_blank">
-          Live Project - Ecommerce Website
-        </a>
-      </li>
-      <li>
-        <strong>Portfolio Website</strong> – Modern personal portfolio built with React and hosted on GitHub Pages.
-      </li>
-    </ul>
-  </div>
-</body>
+    <!-- Contact -->
+    <section class="max-w-4xl mx-auto px-6 py-12" id="contact">
+      <h3 class="text-3xl font-semibold mb-6 text-blue-700">Let's Connect</h3>
+      <p class="text-gray-700 text-lg mb-4">
+        I’m always open to discussing exciting new projects or freelance opportunities. Reach out and let's build something great together.
+      </p>
+      <a
+        href="mailto:udaykiranbhupathi5@gmail.com"
+        class="inline-block bg-blue-600 text-white px-6 py-3 rounded-full text-lg shadow hover:bg-blue-700 transition"
+      >
+        📧 udaykiranbhupathi5@gmail.com
+      </a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t text-center py-6 text-sm text-gray-500">
+      <div class="flex justify-center space-x-6 mb-2">
+        <a href="https://linkedin.com/in/uday-kiran-8a9781235" target="_blank"><i class="fab fa-linkedin text-xl hover:text-blue-600"></i></a>
+        <a href="https://github.com/Kiranudaybhupathi" target="_blank"><i class="fab fa-github text-xl hover:text-gray-800"></i></a>
+        <a href="mailto:udaykiranbhupathi5@gmail.com"><i class="fas fa-envelope text-xl hover:text-red-600"></i></a>
+      </div>
+      <p>&copy; 2025 Bhupathi Uday Kiran. All rights reserved.</p>
+    </footer>
+  </body>
 </html>
