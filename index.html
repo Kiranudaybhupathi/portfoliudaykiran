@@ -9,6 +9,11 @@
       rel="stylesheet"
     />
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
   </head>
   <body class="bg-gray-50 text-gray-800 font-sans leading-relaxed">
     <!-- Header -->
@@ -27,64 +32,61 @@
     </header>
 
     <!-- Hero -->
-    <section class="bg-gradient-to-br from-blue-600 to-indigo-700 text-white py-16 text-center">
+    <section class="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white py-20 text-center shadow-inner">
       <img
         src="profile.jpg"
         alt="Bhupathi Uday Kiran"
         class="mx-auto w-32 h-32 rounded-full border-4 border-white shadow-md object-cover"
       />
-      <h2 class="text-4xl font-bold mt-6">Bhupathi Uday Kiran</h2>
+      <h2 class="text-4xl font-bold mt-6 tracking-tight">Bhupathi Uday Kiran</h2>
       <p class="text-lg mt-2">Full Stack Developer | MERN & Java | E-commerce Specialist</p>
-      <div class="mt-4 space-x-4">
+      <div class="mt-6 space-x-4">
         <a
           href="https://www.linkedin.com/in/uday-kiran-8a9781235/"
           target="_blank"
-          class="bg-white text-blue-600 px-4 py-2 rounded shadow hover:bg-gray-100 font-medium"
+          class="bg-white text-indigo-600 px-5 py-2 rounded-full font-semibold hover:bg-gray-200 shadow transition"
         >LinkedIn</a>
         <a
           href="https://github.com/Kiranudaybhupathi"
           target="_blank"
-          class="bg-white text-blue-600 px-4 py-2 rounded shadow hover:bg-gray-100 font-medium"
+          class="bg-white text-indigo-600 px-5 py-2 rounded-full font-semibold hover:bg-gray-200 shadow transition"
         >GitHub</a>
         <a
           href="mailto:udaykiranbhupathi5@gmail.com"
-          class="bg-white text-blue-600 px-4 py-2 rounded shadow hover:bg-gray-100 font-medium"
+          class="bg-white text-indigo-600 px-5 py-2 rounded-full font-semibold hover:bg-gray-200 shadow transition"
         >Email</a>
       </div>
     </section>
 
     <!-- About -->
-    <section class="max-w-4xl mx-auto px-6 py-12" id="about">
-      <h3 class="text-3xl font-semibold mb-6 border-b pb-2 border-blue-600 inline-block">About Me</h3>
-      <p class="text-gray-700 text-lg">
-        I am a dedicated Full Stack Developer with a strong command of the MERN stack and Java.
-        My expertise lies in crafting scalable and responsive e-commerce platforms and web applications
-        that offer seamless user experiences. I believe in clean code, strong architecture, and continuous learning.
+    <section class="max-w-5xl mx-auto px-6 py-16" id="about">
+      <h3 class="text-4xl font-semibold text-indigo-700 mb-6">🙋‍♂️ About Me</h3>
+      <p class="text-gray-700 text-lg leading-relaxed">
+        I am a passionate Full Stack Developer with deep experience in building scalable web applications using the MERN stack and Java. I focus on creating e-commerce solutions that are intuitive, responsive, and user-friendly. Whether it's backend architecture or frontend design, I strive for quality and clarity in everything I build.
       </p>
     </section>
 
     <!-- Projects -->
-    <section class="bg-gray-100 py-12" id="projects">
+    <section class="bg-gradient-to-br from-purple-50 via-white to-indigo-50 py-16" id="projects">
       <div class="max-w-6xl mx-auto px-6">
-        <h3 class="text-3xl font-semibold mb-8 text-center text-blue-700">Projects</h3>
-        <div class="grid md:grid-cols-2 gap-8">
-          <!-- Project: Ecommerce App -->
-          <div class="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition">
-            <h4 class="text-xl font-semibold mb-2">Ecommerce Web Application</h4>
+        <h3 class="text-4xl font-semibold text-center text-indigo-700 mb-10">🚀 Projects</h3>
+        <div class="grid md:grid-cols-2 gap-10">
+          <!-- Ecommerce Project -->
+          <div class="bg-white rounded-xl p-6 shadow-lg transform hover:-translate-y-1 hover:shadow-2xl transition">
+            <h4 class="text-xl font-semibold text-indigo-600 mb-2">🛒 Ecommerce Web Application</h4>
             <p class="text-gray-600">
-              A full-featured ecommerce platform built using React, Node.js, Express, and MongoDB.
-              Includes user authentication, product search, cart functionality, and admin dashboard.
+              A full-featured ecommerce platform built using React, Node.js, Express, and MongoDB. It includes user authentication, product management, cart functionality, payment integration, and admin dashboard.
             </p>
             <div class="mt-4 flex space-x-4">
               <a
                 href="https://kiranudaybhupathi.github.io/Ecommerce-/"
                 target="_blank"
-                class="text-white bg-blue-600 px-4 py-2 rounded shadow hover:bg-blue-700 transition"
+                class="bg-indigo-600 text-white px-4 py-2 rounded-full shadow hover:bg-indigo-700 transition"
               >🔗 Live Demo</a>
               <a
                 href="https://github.com/Kiranudaybhupathi/Ecommerce-"
                 target="_blank"
-                class="text-blue-600 border border-blue-600 px-4 py-2 rounded hover:bg-blue-50 transition"
+                class="text-indigo-600 border border-indigo-600 px-4 py-2 rounded-full hover:bg-indigo-100 transition"
               >GitHub Repo</a>
             </div>
           </div>
@@ -93,32 +95,34 @@
     </section>
 
     <!-- Resume -->
-    <section class="max-w-4xl mx-auto px-6 py-12" id="resume">
-      <h3 class="text-3xl font-semibold mb-6 text-blue-700">Resume</h3>
+    <section class="max-w-4xl mx-auto px-6 py-16" id="resume">
+      <h3 class="text-4xl font-semibold text-indigo-700 mb-6">📄 Resume</h3>
       <p class="text-gray-700 text-lg mb-4">
-        Want a quick summary of my work, skills, and experience? Click the button below to view or download my professional resume.
+        Download or view my resume to explore my skills, education, and professional journey.
       </p>
       <a
         href="https://kiranudaybhupathi.github.io/Resume-/"
         target="_blank"
-        class="inline-block bg-blue-600 text-white px-6 py-3 rounded-full text-lg shadow hover:bg-blue-700 transition"
+        class="inline-block bg-indigo-600 text-white px-6 py-3 rounded-full text-lg shadow hover:bg-indigo-700 transition"
       >
-        📄 View Resume
+        View Resume
       </a>
     </section>
 
     <!-- Contact -->
-    <section class="max-w-4xl mx-auto px-6 py-12" id="contact">
-      <h3 class="text-3xl font-semibold mb-6 text-blue-700">Let's Connect</h3>
-      <p class="text-gray-700 text-lg mb-4">
-        I’m always open to discussing exciting new projects or freelance opportunities. Reach out and let's build something great together.
-      </p>
-      <a
-        href="mailto:udaykiranbhupathi5@gmail.com"
-        class="inline-block bg-blue-600 text-white px-6 py-3 rounded-full text-lg shadow hover:bg-blue-700 transition"
-      >
-        📧 udaykiranbhupathi5@gmail.com
-      </a>
+    <section class="bg-gradient-to-r from-pink-50 to-purple-100 py-16" id="contact">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        <h3 class="text-4xl font-semibold text-indigo-700 mb-6">📬 Let's Connect</h3>
+        <p class="text-gray-700 text-lg mb-6">
+          I’m always open to freelance work or collaborative projects. Drop me a line and let’s talk.
+        </p>
+        <a
+          href="mailto:udaykiranbhupathi5@gmail.com"
+          class="inline-block bg-pink-600 text-white px-6 py-3 rounded-full text-lg shadow hover:bg-pink-700 transition"
+        >
+          📧 udaykiranbhupathi5@gmail.com
+        </a>
+      </div>
     </section>
 
     <!-- Footer -->
