@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Uday Kiran - Portfolio</title>
   <style>
-    /* Reset */
     * {
       margin: 0;
       padding: 0;
@@ -18,6 +17,7 @@
       color: white;
       min-height: 100vh;
       transition: background 0.3s ease, color 0.3s ease;
+      scroll-behavior: smooth;
       padding-top: 80px;
     }
 
@@ -137,6 +137,20 @@
       font-size: 1rem;
       line-height: 1.6;
     }
+
+    a.button {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #ff6347;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+
+    a.button:hover {
+      background-color: #ff8269;
+    }
   </style>
 </head>
 <body>
@@ -164,37 +178,42 @@
   <!-- Sections -->
   <section id="about">
     <h1>About</h1>
-    <p>Hello! I'm Uday Kiran, a passionate developer. This is my personal portfolio site.</p>
+    <p>Hello! I'm <strong>Uday Kiran</strong>, a full stack web developer (MERN stack + Java) passionate about building impactful digital experiences. Welcome to my portfolio website.</p>
   </section>
 
   <section id="projects">
     <h1>Projects</h1>
-    <p>Here you'll find a collection of my work, including full-stack applications and websites.</p>
+    <p>I’ve worked on a variety of full stack projects. Check out my GitHub for source code:</p>
+    <a href="https://github.com/Kiranudaybhupathi" class="button" target="_blank">My GitHub</a>
   </section>
 
   <section id="capstone">
     <h1>Capstone</h1>
-    <p>Details about my final year capstone project and what I built.</p>
+    <p>My final-year capstone project was a scalable ecommerce application with features like real-time cart, admin panel, payment integration, and user authentication using MERN stack.</p>
   </section>
 
   <section id="resume">
     <h1>Resume</h1>
-    <p>Download my resume and view my career journey so far.</p>
+    <p>View and download my latest resume with all details:</p>
+    <a href="https://kiranudaybhupathi.github.io/Resume-/UdayKiran_Resume.pdf" class="button" target="_blank">Download Resume</a>
   </section>
 
   <section id="blogs">
     <h1>Blogs</h1>
-    <p>I write about tech, development, and career tips here.</p>
+    <p>I share development tips, career insights, and personal learnings here. Coming soon on Hashnode or Medium!</p>
   </section>
 
   <section id="youtube">
     <h1>YouTube</h1>
-    <p>Watch my latest videos, tutorials, and tech breakdowns.</p>
+    <p>I create Telugu-English tech explainers and truth-based videos like Dhruv Rathee. Subscribe to follow the journey:</p>
+    <a href="https://youtube.com/@yourchannel" class="button" target="_blank">Visit YouTube Channel</a>
   </section>
 
   <section id="contact">
     <h1>Contact</h1>
-    <p>Get in touch with me via email or through my socials.</p>
+    <p>📧 Email: <a href="mailto:udaykiranbhupathi5@gmail.com">udaykiranbhupathi5@gmail.com</a><br/>
+       💼 LinkedIn: <a href="https://www.linkedin.com/in/uday-kiran-8a9781235/" target="_blank">linkedin.com/in/uday-kiran</a>
+    </p>
   </section>
 
   <!-- Scripts -->
