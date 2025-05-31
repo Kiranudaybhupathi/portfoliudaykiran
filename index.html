@@ -1,93 +1,73 @@
 <!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bhupathi Uday Kiran - Full Stack Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg-light: linear-gradient(135deg, #f0f4f8, #d9e2ec);
-      --bg-dark: #121212;
-      --text-light: #102a43;
-      --text-dark: #f5f5f5;
-      --card-light: #ffffff;
-      --card-dark: #1e1e1e;
-      --primary: #2f80ed;
-      --secondary: #56ccf2;
-      --shadow: rgba(0, 0, 0, 0.2);
-    }* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: var(--bg-light);
-  color: var(--text-light);
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }body {
+  background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+  color: #102a43;
   padding: 20px;
-  line-height: 1.6;
   transition: background 0.3s, color 0.3s;
 }
 
 body.dark {
-  background: var(--bg-dark);
-  color: var(--text-dark);
+  background: #102a43;
+  color: #f0f4f8;
 }
 
 .container {
   max-width: 900px;
   margin: auto;
-  background: var(--card-light);
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px var(--shadow);
-  transition: background 0.3s;
 }
 
-body.dark .container {
-  background: var(--card-dark);
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.toggle-dark {
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+  background: #2f80ed;
+  color: white;
+  border: none;
 }
 
 h1, h2 {
-  text-align: center;
+  color: #334e68;
 }
 
-h1 {
-  font-size: 2.5rem;
-  color: var(--primary);
-}
-
-h2 {
-  font-size: 1.5rem;
-  margin-top: 30px;
-  border-bottom: 2px solid #d9e2ec;
-  padding-bottom: 5px;
+body.dark h1, body.dark h2 {
+  color: #d9e2ec;
 }
 
 .card {
-  background: var(--card-light);
-  padding: 20px;
-  margin: 20px 0;
+  background: white;
+  padding: 30px;
   border-radius: 12px;
-  box-shadow: 0 6px 18px var(--shadow);
-  transition: transform 0.3s, box-shadow 0.3s;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: background 0.3s;
 }
 
 body.dark .card {
-  background: var(--card-dark);
-}
-
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 24px var(--shadow);
-}
-
-ul {
-  list-style: none;
+  background: #1a1a2e;
 }
 
 a {
-  color: var(--primary);
+  color: #2f80ed;
   text-decoration: none;
 }
 
@@ -95,154 +75,140 @@ a:hover {
   text-decoration: underline;
 }
 
-.social-icons i {
-  font-size: 1.5rem;
-  margin: 0 10px;
-  color: var(--primary);
-}
-
-.toggle-btn {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.blog-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
+.icon {
+  font-size: 1.2rem;
+  margin-right: 10px;
 }
 
 .blog-card {
-  width: 300px;
-  background: var(--card-light);
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px var(--shadow);
-  transition: transform 0.3s, box-shadow 0.3s;
-  position: relative;
+  margin-top: 20px;
 }
 
-.blog-card.expanded {
-  width: 100%;
-}
-
-body.dark .blog-card {
-  background: var(--card-dark);
-}
-
-.blog-card:hover {
-  transform: translateY(-6px);
-}
-
-.blog-card h3 {
-  color: var(--primary);
-}
-
-.blog-content {
-  display: none;
+.full-blog {
   margin-top: 10px;
+  line-height: 1.6;
 }
 
-.blog-card.expanded .blog-content {
-  display: block;
+.hidden {
+  display: none;
 }
 
-footer {
-  text-align: center;
-  margin-top: 40px;
-  font-size: 0.9rem;
-  color: #829ab1;
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.hamburger {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    font-size: 1.5rem;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    list-style: none;
+    margin-top: 20px;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
 }
 
   </style>
-  <script>
-    function toggleDarkMode() {
-      document.body.classList.toggle('dark');
-    }function toggleBlogDetails(index) {
-  const card = document.getElementById(`blog-${index}`);
-  card.classList.toggle('expanded');
-}
-
-  </script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-  <div class="toggle-btn">
-    <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
-  </div>
   <div class="container">
-    <h1>Bhupathi Uday Kiran</h1>
-    <p style="text-align:center; font-weight: bold;">Full Stack Developer | MERN Stack & Java | E-commerce Specialist</p><div class="card">
+    <header>
+      <h1>Bhupathi Uday Kiran</h1>
+      <button class="toggle-dark" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+    </header><nav class="nav">
+  <span class="hamburger" onclick="toggleMenu()">☰</span>
+  <ul id="menu">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#resume">Resume</a></li>
+    <li><a href="#blog">Blog</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section id="about" class="card">
   <h2>About Me</h2>
   <p>I am a passionate Full Stack Developer with experience in building scalable, performant, and modern web applications using the MERN stack and Java. I specialize in developing eCommerce solutions and crafting professional digital experiences.</p>
-</div>
+</section>
 
-<div class="card">
+<section id="skills" class="card">
   <h2>Skills</h2>
   <ul>
-    <li>Frontend: React, HTML5, CSS3, Tailwind, Bootstrap</li>
-    <li>Backend: Node.js, Express.js, Java, MongoDB</li>
-    <li>Tools: Git, GitHub, Postman, Netlify, Vercel</li>
+    <li>HTML, CSS, JavaScript</li>
+    <li>React, Node.js, Express</li>
+    <li>MongoDB, MySQL</li>
+    <li>Java, Spring Boot</li>
+    <li>REST APIs, JWT Auth</li>
   </ul>
-</div>
+</section>
 
-<div class="card">
+<section id="projects" class="card">
   <h2>Projects</h2>
-  <ul>
-    <li><strong>Ecommerce Website:</strong> A full-featured eCommerce site with user auth and admin dashboard – <a href="https://ecommerceprojec.netlify.app/" target="_blank">Visit Project</a></li>
-  </ul>
-</div>
+  <p><strong>E-Commerce Website</strong> - A full-featured shopping platform with product catalog, cart, login, and admin features.</p>
+  <a href="https://ecommerceprojec.netlify.app/" target="_blank">Visit Project</a>
+</section>
 
-<div class="card">
+<section id="resume" class="card">
   <h2>Resume</h2>
-  <p>Download my latest resume from the link below:</p>
   <a href="https://resumeav1.netlify.app/" target="_blank">View Resume</a>
-</div>
+</section>
 
-<div class="card">
+<section id="blog" class="card">
   <h2>Blog</h2>
-  <div class="blog-container">
-    <div class="blog-card" id="blog-1">
-      <h3>5 Secrets to Building Scalable MERN Apps</h3>
-      <p>Discover how to architect your MERN stack apps like a pro.</p>
-      <a href="#" onclick="toggleBlogDetails(1)">Read More</a>
-      <div class="blog-content">
-        <p>Learn about advanced modular structures, separating concerns between frontend and backend, using tools like PM2 and Nginx for scaling Node.js servers, and MongoDB optimization techniques for large-scale data.</p>
-      </div>
-    </div>
-    <div class="blog-card" id="blog-2">
-      <h3>My Journey: From Java Basics to Full Stack</h3>
-      <p>A personal post on my transition to full stack development.</p>
-      <a href="#" onclick="toggleBlogDetails(2)">Read More</a>
-      <div class="blog-content">
-        <p>I began with Java in college, developed backend APIs, then moved to Node.js and React. I share tips and resources that helped me and the key moments of my growth as a developer.</p>
-      </div>
-    </div>
-    <div class="blog-card" id="blog-3">
-      <h3>Deploying React + Node Apps Easily</h3>
-      <p>How to deploy full stack apps on Netlify, Render & Vercel.</p>
-      <a href="#" onclick="toggleBlogDetails(3)">Read More</a>
-      <div class="blog-content">
-        <p>This guide covers CI/CD pipeline setup, GitHub integration, setting environment variables, and handling routing between frontend and backend deployments seamlessly.</p>
-      </div>
+  <div class="blog-card">
+    <h3>The Future of Web Development</h3>
+    <p class="short-text">Explore upcoming trends like AI, Web3, and serverless tech shaping the dev world...</p>
+    <button onclick="toggleBlog('blog1')">Read More</button>
+    <div id="blog1" class="full-blog hidden">
+      <p>
+        Web development is advancing rapidly. With tools like AI-assisted coding, modern frameworks, and edge computing, developers are pushing boundaries. This blog dives deep into frontend evolution (React, Qwik), backend shifts (serverless, edge), and how to stay relevant in the new era of web development.
+      </p>
+      <button onclick="toggleBlog('blog1')">Show Less</button>
     </div>
   </div>
-</div>
+</section>
 
-<div class="card">
+<section id="contact" class="card">
   <h2>Contact</h2>
-  <ul class="social-icons">
-    <li><i class="fas fa-envelope"></i> udaykiranbhupathi5@gmail.com</li>
-    <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/uday-kiran" target="_blank">linkedin.com/in/uday-kiran</a></li>
-    <li><i class="fab fa-github"></i> <a href="https://github.com/Kiranudaybhupathi" target="_blank">github.com/Kiranudaybhupathi</a></li>
+  <ul>
+    <li><span class="icon">📧</span>Email: udaykiranbhupathi5@gmail.com</li>
+    <li><span class="icon">💼</span>LinkedIn: <a href="https://www.linkedin.com/in/uday-kiran" target="_blank">linkedin.com/in/uday-kiran</a></li>
+    <li><span class="icon">💻</span>GitHub: <a href="https://github.com/Kiranudaybhupathi" target="_blank">github.com/Kiranudaybhupathi</a></li>
   </ul>
-</div>
+</section>
 
-<footer>
+<footer style="text-align:center; color:#829ab1; font-size: 0.9rem; margin-top: 40px;">
   © 2025 Bhupathi Uday Kiran. All rights reserved.
 </footer>
 
-  </div>
-</body>
+  </div>  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark');
+    }
+
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.classList.toggle('show');
+    }
+
+    function toggleBlog(id) {
+      document.getElementById(id).classList.toggle('hidden');
+    }
+  </script></body>
 </html>
