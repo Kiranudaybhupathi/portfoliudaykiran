@@ -1,139 +1,99 @@
-<!DOCTYPE html><html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bhupathi Uday Kiran | Full Stack Developer</title>
-    <link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/137432975?v=4" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/tsparticles@3.0.4/tsparticles.bundle.min.js"></script>
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <style>
-      html {
-        scroll-behavior: smooth;
-      }
-      body {
-        font-family: 'Poppins', sans-serif;
-      }
-      #scroll-progress {
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 4px;
-        background: #38bdf8;
-        width: 0;
-        z-index: 50;
-      }
-    </style>
-  </head>
-  <body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-white">
-    <div id="scroll-progress"></div><!-- HEADER -->
-<header class="sticky top-0 z-50 bg-white dark:bg-gray-900 shadow-lg">
-  <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-    <h1 class="text-2xl font-bold text-cyan-500">Uday Kiran</h1>
-    <nav class="space-x-6 hidden md:flex">
-      <a href="#about" class="hover:text-cyan-500">About</a>
-      <a href="#skills" class="hover:text-cyan-500">Skills</a>
-      <a href="#projects" class="hover:text-cyan-500">Projects</a>
-      <a href="#resume" class="hover:text-cyan-500">Resume</a>
-      <a href="#contact" class="hover:text-cyan-500">Contact</a>
-    </nav>
-    <button id="dark-toggle" class="text-xl">🌙</button>
-  </div>
-</header>
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bhupathi Uday Kiran - Full Stack Developer</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }body {
+  background: #f9f9f9;
+  color: #333;
+}
 
-<!-- PARTICLE BACKGROUND -->
-<div id="tsparticles" class="absolute top-0 left-0 w-full h-[100vh] -z-10"></div>
+header {
+  background: linear-gradient(135deg, #4c5eff, #2ec7ff);
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
 
-<!-- HERO -->
-<section class="text-center pt-24 pb-12">
-  <img src="https://avatars.githubusercontent.com/u/137432975?v=4" alt="Profile" class="w-32 h-32 rounded-full mx-auto shadow-lg">
-  <h2 class="text-3xl md:text-4xl font-bold mt-6">Hi, I'm Bhupathi Uday Kiran</h2>
-  <p class="mt-2 text-lg text-gray-600 dark:text-gray-400">Full Stack Developer | MERN | Java | E-commerce Specialist</p>
-  <div class="mt-6 space-x-4">
-    <a href="#contact" class="bg-cyan-500 hover:bg-cyan-600 text-white px-6 py-2 rounded-xl shadow">Hire Me</a>
-    <a href="#resume" class="border border-cyan-500 hover:bg-cyan-500 hover:text-white text-cyan-500 px-6 py-2 rounded-xl shadow">Download Resume</a>
-  </div>
-</section>
+header img {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: 1rem;
+}
 
-<!-- ABOUT -->
-<section id="about" class="py-12 px-6 max-w-5xl mx-auto">
-  <h2 class="text-2xl font-bold mb-4 text-cyan-500">About Me</h2>
-  <p class="text-lg">I'm a passionate Full Stack Developer specializing in the MERN stack and Java. I build robust and scalable e-commerce websites with modern UI/UX and clean code architecture.</p>
-</section>
+header h1 {
+  font-size: 2rem;
+  font-weight: 600;
+}
 
-<!-- SKILLS -->
-<section id="skills" class="py-12 px-6 max-w-5xl mx-auto">
-  <h2 class="text-2xl font-bold mb-4 text-cyan-500">Skills</h2>
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-    <div class="p-4 bg-gray-100 dark:bg-gray-800 rounded-xl">React</div>
-    <div class="p-4 bg-gray-100 dark:bg-gray-800 rounded-xl">Node.js</div>
-    <div class="p-4 bg-gray-100 dark:bg-gray-800 rounded-xl">MongoDB</div>
-    <div class="p-4 bg-gray-100 dark:bg-gray-800 rounded-xl">Express</div>
-    <div class="p-4 bg-gray-100 dark:bg-gray-800 rounded-xl">Java</div>
-    <div class="p-4 bg-gray-100 dark:bg-gray-800 rounded-xl">Git & GitHub</div>
-    <div class="p-4 bg-gray-100 dark:bg-gray-800 rounded-xl">Tailwind CSS</div>
-    <div class="p-4 bg-gray-100 dark:bg-gray-800 rounded-xl">REST APIs</div>
-  </div>
-</section>
+header p {
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+}
 
-<!-- PROJECTS -->
-<section id="projects" class="py-12 px-6 max-w-5xl mx-auto">
-  <h2 class="text-2xl font-bold mb-4 text-cyan-500">Projects</h2>
-  <div class="grid md:grid-cols-2 gap-6">
-    <div class="bg-white dark:bg-gray-800 rounded-xl shadow p-6">
-      <h3 class="font-semibold text-lg mb-2">E-commerce Website</h3>
-      <p class="text-sm mb-2">Built with MERN stack, fully responsive, includes cart, authentication, and admin dashboard.</p>
-      <a href="https://github.com/Kiranudaybhupathi/Ecommerce-App" class="text-cyan-500 hover:underline">GitHub Repo</a>
-    </div>
-    <!-- Add more project cards as needed -->
-  </div>
-</section>
+section {
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+}
 
-<!-- RESUME -->
-<section id="resume" class="py-12 px-6 max-w-5xl mx-auto text-center">
-  <h2 class="text-2xl font-bold mb-4 text-cyan-500">Resume</h2>
-  <a href="https://kiranudaybhupathi.github.io/Resume-/" target="_blank" class="text-cyan-500 hover:underline text-lg">View Resume Website</a>
-</section>
+section h2 {
+  color: #4c5eff;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
 
-<!-- CONTACT -->
-<section id="contact" class="py-12 px-6 max-w-5xl mx-auto text-center">
-  <h2 class="text-2xl font-bold mb-4 text-cyan-500">Contact</h2>
-  <p class="text-lg mb-4">Let's connect!</p>
-  <div class="space-x-6 text-xl">
-    <a href="mailto:udaykiranbhupathi5@gmail.com" class="hover:text-cyan-500">📧</a>
-    <a href="https://www.linkedin.com/in/uday-kiran-8a9781235/" target="_blank" class="hover:text-cyan-500">LinkedIn</a>
-    <a href="https://github.com/Kiranudaybhupathi" target="_blank" class="hover:text-cyan-500">GitHub</a>
-  </div>
-</section>
+ul {
+  list-style: none;
+  line-height: 1.8;
+}
 
-<footer class="text-center py-6 text-sm text-gray-500 dark:text-gray-400">© 2025 Bhupathi Uday Kiran. All rights reserved.</footer>
+a {
+  color: #2ec7ff;
+  text-decoration: none;
+}
 
-<script>
-  ScrollReveal().reveal("section", { delay: 200, distance: "50px", origin: "bottom" });
-  const darkToggle = document.getElementById("dark-toggle");
-  darkToggle.onclick = () => {
-    document.documentElement.classList.toggle("dark");
-    localStorage.setItem("theme", document.documentElement.classList.contains("dark") ? "dark" : "light");
-  };
-  if (localStorage.getItem("theme") === "dark") {
-    document.documentElement.classList.add("dark");
-  }
-  window.addEventListener("scroll", () => {
-    const winScroll = document.documentElement.scrollTop;
-    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const scrolled = (winScroll / height) * 100;
-    document.getElementById("scroll-progress").style.width = scrolled + "%";
-  });
-  tsParticles.load("tsparticles", {
-    particles: {
-      number: { value: 60 },
-      size: { value: 3 },
-      move: { speed: 1 },
-      line_linked: { enable: true },
-    },
-  });
-</script>
+a:hover {
+  text-decoration: underline;
+}
 
-  </body>
-</html>
+footer {
+  background: #eee;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 2rem;
+}
+
+  </style>
+</head><body>
+  <header>
+    <img src="file-YK57jxvgvJhbRVobfgTbdj" alt="Bhupathi Uday Kiran">
+    <h1>Bhupathi Uday Kiran</h1>
+    <p>Full Stack Developer | MERN Stack & Java | E-commerce Specialist</p>
+  </header>  <section>
+    <h2>About Me</h2>
+    <p>I am a passionate Full Stack Developer with experience in building scalable, performant, and modern web applications using the MERN stack and Java. I specialize in developing eCommerce solutions and crafting professional digital experiences.</p>
+  </section>  <section>
+    <h2>Contact</h2>
+    <ul>
+      <li>Email: <a href="mailto:udaykiranbhupathi5@gmail.com">udaykiranbhupathi5@gmail.com</a></li>
+      <li>LinkedIn: <a href="https://www.linkedin.com/in/uday-kiran-8a9781235/" target="_blank">linkedin.com/in/uday-kiran</a></li>
+      <li>GitHub: <a href="https://github.com/Kiranudaybhupathi" target="_blank">github.com/Kiranudaybhupathi</a></li>
+    </ul>
+  </section>  <footer>
+    &copy; 2025 Bhupathi Uday Kiran. All rights reserved.
+  </footer>
+</body></html>
