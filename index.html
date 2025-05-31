@@ -1,10 +1,9 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Bhupathi Uday Kiran - Full Stack Developer</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -15,201 +14,170 @@
       --card-light: #ffffff;
       --card-dark: #334155;
       --primary: #2f80ed;
-    }* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: 'Roboto', sans-serif;
-  background: linear-gradient(135deg, var(--bg-light), #d9e2ec);
-  color: var(--text-light);
-  padding: 60px 20px 20px;
-  transition: background 0.5s, color 0.5s;
-}
-
-body.dark {
-  background: linear-gradient(135deg, var(--bg-dark), #0f172a);
-  color: var(--text-dark);
-}
-
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: #ffffffcc;
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid #ccc;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  z-index: 1000;
-}
-
-nav a {
-  margin: 0 10px;
-  color: var(--primary);
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-nav a:hover {
-  text-decoration: underline;
-  color: #1c60b3;
-}
-
-.toggle-btn {
-  padding: 6px 12px;
-  background: var(--primary);
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.toggle-btn:hover {
-  background: #1c60b3;
-}
-
-.container {
-  max-width: 850px;
-  margin: 0 auto;
-  background: var(--card-light);
-  padding: 30px;
-  border-radius: 14px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.5s;
-}
-
-body.dark .container {
-  background: var(--card-dark);
-}
-
-.container:hover {
-  transform: scale(1.01);
-  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.15);
-}
-
-h1 {
-  font-size: 2.5rem;
-  color: var(--primary);
-  margin-bottom: 10px;
-  text-align: center;
-}
-
-p.title {
-  text-align: center;
-  font-weight: bold;
-  font-size: 1.1rem;
-  color: #486581;
-}
-
-section {
-  margin-top: 40px;
-  padding: 25px;
-  border-radius: 12px;
-  background: #f7fafc;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-body.dark section {
-  background: #475569;
-}
-
-section:hover {
-  transform: translateY(-4px);
-}
-
-h2 {
-  font-size: 1.6rem;
-  margin-bottom: 12px;
-  border-bottom: 2px solid #d9e2ec;
-  padding-bottom: 5px;
-}
-
-ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-li {
-  margin: 10px 0;
-}
-
-a {
-  color: var(--primary);
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-.resume-btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 10px 20px;
-  background-color: var(--primary);
-  color: white;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.resume-btn:hover {
-  background-color: #1c60b3;
-  transform: scale(1.05);
-}
-
-img.project-img {
-  width: 100%;
-  border-radius: 10px;
-  margin: 10px 0;
-}
-
-footer {
-  margin-top: 40px;
-  text-align: center;
-  font-size: 0.9rem;
-  color: #829ab1;
-}
-
-.reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.6s ease-out;
-}
-
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
+    }
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: var(--bg-light);
+      color: var(--text-light);
+      transition: background 0.5s, color 0.5s;
+      padding-top: 60px;
+    }
+    body.dark {
+      background: var(--bg-dark);
+      color: var(--text-dark);
+    }
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      background: white; padding: 10px 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      display: flex; justify-content: space-between; align-items: center;
+      z-index: 1000;
+    }
+    nav a {
+      margin: 0 10px;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .toggle-btn {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .container {
+      max-width: 850px;
+      margin: auto;
+      padding: 20px;
+    }
+    section {
+      background: var(--card-light);
+      padding: 20px;
+      margin: 30px 0;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+    body.dark section {
+      background: var(--card-dark);
+    }
+    section:hover {
+      transform: translateY(-5px);
+    }
+    h1 {
+      font-size: 2.5rem;
+      color: var(--primary);
+      text-align: center;
+    }
+    h2 {
+      border-bottom: 2px solid #d9e2ec;
+      margin-bottom: 10px;
+      padding-bottom: 5px;
+      color: #486581;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    li {
+      margin: 8px 0;
+    }
+    a {
+      color: var(--primary);
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease-out;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      margin: 40px 0;
+      color: #829ab1;
+    }
   </style>
 </head>
 <body>
-  <!-- All previous content remains unchanged -->
+  <nav>
+    <div>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <button class="toggle-btn" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+  </nav>
+
+  <div class="container">
+    <section id="about" class="reveal">
+      <h1>Bhupathi Uday Kiran</h1>
+      <p style="text-align:center; font-weight: bold;">Full Stack Developer | MERN Stack & Java | E-commerce Specialist</p>
+      <p>I build scalable and modern eCommerce solutions using React, Node.js, MongoDB, and Java.</p>
+    </section>
+
+    <section id="skills" class="reveal">
+      <h2>Skills</h2>
+      <ul>
+        <li>Frontend: React, HTML5, CSS3, JavaScript, Tailwind CSS</li>
+        <li>Backend: Node.js, Express.js, Java</li>
+        <li>Database: MongoDB, MySQL</li>
+        <li>Tools: Git, GitHub, Postman, VS Code</li>
+      </ul>
+    </section>
+
+    <section id="projects" class="reveal">
+      <h2>Projects</h2>
+      <ul>
+        <li><strong>MyCart:</strong> Full-fledged MERN eCommerce site with payments, cart, and admin dashboard.</li>
+        <li><strong>InstaClone:</strong> Instagram-like full stack app with authentication, posts, likes & comments.</li>
+        <li><strong>Portfolio:</strong> Personal website showcasing my work and contact information.</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="reveal">
+      <h2>Contact</h2>
+      <ul>
+        <li>Email: <a href="mailto:udaykiranbhupathi5@gmail.com">udaykiranbhupathi5@gmail.com</a></li>
+        <li>LinkedIn: <a href="https://www.linkedin.com/in/uday-kiran" target="_blank">linkedin.com/in/uday-kiran</a></li>
+        <li>GitHub: <a href="https://github.com/Kiranudaybhupathi" target="_blank">github.com/Kiranudaybhupathi</a></li>
+      </ul>
+    </section>
+
+    <footer>© 2025 Bhupathi Uday Kiran. All rights reserved.</footer>
+  </div>
+
   <script>
     function toggleDarkMode() {
       document.body.classList.toggle('dark');
-    }const reveals = document.querySelectorAll(".reveal");
-
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("active");
     }
-  });
-}, { threshold: 0.1 });
 
-reveals.forEach(section => observer.observe(section));
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.1 });
 
+    reveals.forEach(section => observer.observe(section));
   </script>
 </body>
 </html>
