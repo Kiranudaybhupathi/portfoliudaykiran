@@ -2,287 +2,310 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Uday Kiran - Full Stack Developer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Bhupathi Uday Kiran - Full Stack Developer Portfolio" />
+  <meta name="keywords" content="Full Stack Developer, MERN Stack, Java, E-commerce, Portfolio, Resume, Blog, Capstone Project" />
+  <meta name="author" content="Bhupathi Uday Kiran" />
+  <title>Bhupathi Uday Kiran - Full Stack Developer</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
+    /* Reset and Base */
     * { margin: 0; padding: 0; box-sizing: border-box; }
-
     body {
       font-family: 'Roboto', sans-serif;
-      transition: background 1s, color 1s;
-      background: linear-gradient(270deg, #1e3c72, #2a5298, #1e3c72);
-      background-size: 600% 600%;
-      animation: gradientFlow 20s ease infinite;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
       color: #fff;
+      line-height: 1.6;
       overflow-x: hidden;
-    }
-
-    body.dark {
-      background: linear-gradient(270deg, #0f0f0f, #1c1c1c, #0f0f0f);
-      color: #ddd;
-    }
-
-    @keyframes gradientFlow {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    header {
-      text-align: center;
       position: relative;
     }
 
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 30px;
-      background-color: rgba(0, 0, 0, 0.2);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 20px;
-    }
-
-    .nav-links a {
-      color: #fcd34d;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-
-    .nav-links a:hover {
-      color: #fbbf24;
-    }
-
-    .menu-toggle {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-    }
-
-    .menu-toggle span {
-      height: 3px;
-      width: 25px;
-      background: #fcd34d;
-      margin: 4px 0;
-    }
-
-    @media (max-width: 768px) {
-      .nav-links {
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background-color: rgba(0, 0, 0, 0.8);
-        flex-direction: column;
-        width: 200px;
-        display: none;
-      }
-
-      .nav-links.show {
-        display: flex;
-      }
-
-      .menu-toggle {
-        display: flex;
-      }
-    }
-
+    /* Smoke Canvas */
     #smoke {
       position: fixed;
       top: 0; left: 0;
       width: 100vw;
       height: 100vh;
       z-index: -1;
-      opacity: 0.4;
+      opacity: 0.3;
       pointer-events: none;
-      mix-blend-mode: screen;
     }
 
     .container {
       max-width: 1000px;
       margin: auto;
       padding: 30px 20px;
-    }
-
-    h1, h2 {
-      margin-bottom: 10px;
-    }
-
-    .profile-img {
-      width: 160px;
-      height: 160px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 4px solid #fcd34d;
-      margin-bottom: 20px;
-    }
-
-    .section {
-      margin-bottom: 40px;
-      padding: 20px;
       background: rgba(255, 255, 255, 0.1);
       border-radius: 20px;
       backdrop-filter: blur(8px);
       box-shadow: 0 0 20px rgba(0,0,0,0.2);
     }
 
-    ul {
-      list-style: none;
-      padding-left: 20px;
+    h1, h2, h3 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #fff;
     }
 
-    ul li::before {
-      content: '⟶ ';
-      color: #fcd34d;
-      font-weight: bold;
+    h1 {
+      font-size: 2.5rem;
+      margin-top: 20px;
     }
 
-    .btn {
-      background: #fcd34d;
-      color: #000;
-      padding: 10px 20px;
+    section {
+      margin-top: 40px;
+      padding: 20px;
+      border-radius: 16px;
+      background: rgba(0,0,0,0.2);
+    }
+
+    a {
+      color: #ffd700;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .projects, .blogs {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
+      padding: 20px;
+      backdrop-filter: blur(6px);
+      transition: 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    .toggle-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #222;
+      color: #fff;
       border: none;
-      border-radius: 30px;
-      font-weight: bold;
+      padding: 10px 15px;
+      border-radius: 10px;
       cursor: pointer;
-      transition: 0.3s;
-      margin-top: 10px;
+      z-index: 999;
     }
 
-    .btn:hover {
-      background: #fbbf24;
-    }
-
-    .toggle-theme {
-      position: absolute;
-      top: 15px;
-      right: 30px;
-      cursor: pointer;
+    .dark-mode {
+      background: #0f0f0f;
+      color: #ddd;
     }
 
     footer {
       text-align: center;
-      margin-top: 40px;
-      color: #ddd;
+      margin-top: 50px;
+      font-size: 0.9rem;
+      color: #bbb;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      position: sticky;
+      top: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 999;
+    }
+
+    .menu {
+      display: flex;
+      gap: 15px;
+    }
+
+    .menu a {
+      color: white;
+      font-weight: bold;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background: white;
+      margin: 4px;
+    }
+
+    @media (max-width: 768px) {
+      .menu {
+        display: none;
+        flex-direction: column;
+        background: #222;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 200px;
+        padding: 10px;
+      }
+
+      .menu.active {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+      }
     }
   </style>
 </head>
 <body>
+
   <canvas id="smoke"></canvas>
 
-  <nav class="navbar">
-    <div><strong>UDAY</strong></div>
-    <div class="menu-toggle" onclick="toggleMenu()">
-      <span></span><span></span><span></span>
+  <button class="toggle-btn" onclick="toggleDark()">🌗 Toggle Mode</button>
+
+  <nav>
+    <h2>Uday Kiran</h2>
+    <div class="hamburger" onclick="document.querySelector('.menu').classList.toggle('active')">
+      <div></div><div></div><div></div>
     </div>
-    <div class="nav-links" id="navLinks">
-      <a href="#">Home</a>
+    <div class="menu">
+      <a href="#about">About</a>
       <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
+      <a href="#capstone">Capstone</a>
       <a href="#resume">Resume</a>
-      <a href="mailto:udaykiranbhupathi5@gmail.com">Contact</a>
+      <a href="#blogs">Blogs</a>
+      <a href="#contact">Contact</a>
     </div>
-    <div class="toggle-theme" onclick="toggleTheme()">🌗</div>
   </nav>
 
   <div class="container">
-    <header>
-      <img src="profile.jpg" alt="Uday Kiran" class="profile-img"/>
-      <h1>Bhupathi Uday Kiran</h1>
-      <h2>Full Stack Developer (MERN + Java)</h2>
-      <p>Email: <a href="mailto:udaykiranbhupathi5@gmail.com">udaykiranbhupathi5@gmail.com</a></p>
-      <p>
-        <a href="https://www.linkedin.com/in/uday-kiran-8a9781235/" target="_blank">LinkedIn</a> |
-        <a href="https://github.com/Kiranudaybhupathi" target="_blank">GitHub</a>
-      </p>
-    </header>
+    <h1>Bhupathi Uday Kiran</h1>
+    <p style="text-align:center; font-weight: bold;">Full Stack Developer | MERN Stack & Java | E-commerce Specialist</p>
 
-    <section class="section" id="about">
+    <section id="about" data-aos="fade-up">
       <h2>About Me</h2>
-      <p>I am a Full Stack Developer with expertise in building eCommerce websites using the MERN stack (MongoDB, Express, React, Node.js) and Java.</p>
-      <button class="btn" onclick="alert('Thanks for checking out!')">Say Hi 👋</button>
+      <p>I am a passionate Full Stack Developer experienced in building scalable web applications using MERN stack and Java. I specialize in eCommerce and modern digital solutions.</p>
     </section>
 
-    <section class="section" id="projects">
+    <section id="projects" data-aos="fade-right">
       <h2>Projects</h2>
-      <ul>
-        <li><strong>eCommerce App:</strong> Full-stack with authentication, cart, admin panel, and payments.</li>
-        <li><strong>Instagram Clone:</strong> Social platform with posts, likes, and profiles.</li>
-        <li><strong>Landing Page:</strong> Responsive HTML/CSS with animations.</li>
-      </ul>
+      <div class="projects">
+        <div class="card">
+          <h3>Professional E-commerce Website</h3>
+          <p>A full-stack MERN based eCommerce website with cart, payment, and admin dashboard.</p>
+          <a href="https://ecommerceprojec.netlify.app/" target="_blank">Visit Project →</a>
+        </div>
+      </div>
     </section>
 
-    <section class="section" id="skills">
-      <h2>Skills</h2>
-      <ul>
-        <li>Frontend: React.js, HTML, CSS, Tailwind</li>
-        <li>Backend: Node.js, Express.js, Java</li>
-        <li>Database: MongoDB</li>
-        <li>Tools: Git, GitHub, VS Code</li>
-      </ul>
+    <section id="capstone" data-aos="fade-left">
+      <h2>Capstone Project</h2>
+      <div class="card">
+        <h3>Advanced Machine Learning for Drought Forecasting</h3>
+        <p>This project presents a comprehensive analysis of advanced ML methodologies to forecast agricultural droughts with high precision. We used real-time weather and soil data with LSTM, Random Forest, and hybrid models.</p>
+      </div>
     </section>
 
-    <section class="section" id="resume">
-      <h2>Resume Website</h2>
-      <p>Visit: <a href="https://kiranudaybhupathi.github.io/Resume-/" target="_blank">My Online Resume</a></p>
+    <section id="resume" data-aos="fade-up">
+      <h2>Resume</h2>
+      <div class="card">
+        <p>View or download my professional resume here:</p>
+        <a href="https://resumeav1.netlify.app/" target="_blank">Open Resume →</a>
+      </div>
+    </section>
+
+    <section id="blogs" data-aos="fade-up">
+      <h2>Blogs</h2>
+      <div class="blogs">
+        <div class="card">
+          <h3>Why MERN is Perfect for eCommerce</h3>
+          <p>Explore how the MERN stack helps create robust, scalable, and maintainable eCommerce solutions.</p>
+          <a href="#">Read More →</a>
+        </div>
+        <div class="card">
+          <h3>Java vs Node.js in 2025</h3>
+          <p>A deep dive comparing performance, use cases, and popularity of Java vs Node.js for backend devs.</p>
+          <a href="#">Read More →</a>
+        </div>
+        <div class="card">
+          <h3>How to Secure a MERN App</h3>
+          <p>Authentication, authorization, JWT, and security best practices for modern web apps.</p>
+          <a href="#">Read More →</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" data-aos="fade-in">
+      <h2>Contact</h2>
+      <div class="card">
+        <p>📧 Email: udaykiranbhupathi5@gmail.com</p>
+        <p>🔗 <a href="https://www.linkedin.com/in/uday-kiran" target="_blank">LinkedIn</a></p>
+        <p>💻 <a href="https://github.com/Kiranudaybhupathi" target="_blank">GitHub</a></p>
+      </div>
     </section>
 
     <footer>
-      <p>&copy; 2025 Uday Kiran. All rights reserved.</p>
+      © 2025 Bhupathi Uday Kiran. All rights reserved.
     </footer>
   </div>
 
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+
+  <!-- Toggle Dark Mode -->
+  <script>
+    function toggleDark() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
+
+  <!-- Smoke Background -->
   <script>
     const canvas = document.getElementById('smoke');
     const ctx = canvas.getContext('2d');
-    let particles = [];
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 
-    function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
+    let particles = [];
 
     class Particle {
       constructor() {
-        this.reset();
-      }
-
-      reset() {
         this.x = Math.random() * canvas.width;
         this.y = canvas.height + Math.random() * 100;
         this.size = Math.random() * 20 + 10;
-        this.speedY = Math.random() * -0.5 - 0.2;
+        this.speedY = Math.random() * -1 - 0.5;
         this.alpha = Math.random() * 0.2 + 0.05;
-        this.speedX = Math.random() * 1 - 0.5;
       }
-
       update() {
-        this.x += this.speedX;
         this.y += this.speedY;
-        if (this.y < -this.size || this.x < -this.size || this.x > canvas.width + this.size) {
-          this.reset();
+        if (this.y < 0) {
           this.y = canvas.height + Math.random() * 100;
+          this.x = Math.random() * canvas.width;
         }
       }
-
       draw() {
-        ctx.beginPath();
         ctx.fillStyle = `rgba(255,255,255,${this.alpha})`;
+        ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.fill();
       }
     }
 
-    function initParticles(count = 120) {
-      particles = [];
-      for (let i = 0; i < count; i++) {
+    function init() {
+      for (let i = 0; i < 100; i++) {
         particles.push(new Particle());
       }
     }
@@ -296,17 +319,7 @@
       requestAnimationFrame(animate);
     }
 
-    function toggleTheme() {
-      document.body.classList.toggle('dark');
-    }
-
-    function toggleMenu() {
-      document.getElementById('navLinks').classList.toggle('show');
-    }
-
-    window.addEventListener('resize', resizeCanvas);
-    resizeCanvas();
-    initParticles();
+    init();
     animate();
   </script>
 </body>
