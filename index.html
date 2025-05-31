@@ -5,84 +5,125 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Bhupathi Uday Kiran - Full Stack Developer</title>
 
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      scroll-behavior: smooth;
     }
 
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Roboto', sans-serif;
       background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
       color: #102a43;
-      padding: 20px;
-      line-height: 1.6;
+    }
+
+    /* Navbar */
+    nav {
+      background: white;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      padding: 15px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-logo {
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: #2f80ed;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #334e68;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #2f80ed;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    @media screen and (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background: white;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .hamburger {
+        display: block;
+        color: #334e68;
+      }
     }
 
     .container {
       max-width: 900px;
-      margin: 0 auto;
+      margin: 30px auto;
       background: white;
       padding: 30px;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 1s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h1, h2 {
+      text-align: center;
     }
 
     h1 {
       font-size: 2.5rem;
       color: #334e68;
       margin-bottom: 10px;
-      text-align: center;
     }
 
     h2 {
       font-size: 1.8rem;
       color: #486581;
-      margin-top: 40px;
-      margin-bottom: 10px;
+      margin: 40px 0 20px;
       border-bottom: 2px solid #d9e2ec;
       padding-bottom: 5px;
     }
 
     p {
+      text-align: center;
       margin-bottom: 10px;
-    }
-
-    ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    li {
-      margin: 8px 0;
-      display: flex;
-      align-items: center;
-    }
-
-    a {
-      color: #2f80ed;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-
-    a:hover {
-      text-decoration: underline;
-      color: #1c63d6;
-    }
-
-    ul li i {
-      margin-right: 10px;
-      color: #2f80ed;
-      min-width: 20px;
-    }
-
-    .section:hover {
-      transform: translateY(-2px);
-      transition: 0.3s ease-in-out;
     }
 
     .skills span {
@@ -100,6 +141,27 @@
       background: #c1d3ec;
     }
 
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul li {
+      margin: 8px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    a {
+      color: #2f80ed;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
     footer {
       margin-top: 40px;
       text-align: center;
@@ -107,65 +169,96 @@
       color: #829ab1;
     }
 
-    @media screen and (max-width: 600px) {
-      h1 {
-        font-size: 2rem;
-      }
+    /* Project Cards */
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid #d9e2ec;
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 20px 0;
+      transition: transform 0.3s ease;
+    }
 
-      h2 {
-        font-size: 1.4rem;
-      }
+    .project-card:hover {
+      transform: scale(1.02);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: auto;
+    }
+
+    .project-card .info {
+      padding: 15px;
+      background: #f7fafc;
+    }
+
+    .project-card .info h3 {
+      margin-bottom: 8px;
+      color: #334e68;
+    }
+
+    .project-card .info a {
+      color: #2f80ed;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="nav-logo">Uday Kiran</div>
+    <div class="hamburger" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#resume">Resume</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
   <div class="container">
     <h1>Bhupathi Uday Kiran</h1>
-    <p style="text-align:center; font-weight: bold;">Full Stack Developer | MERN Stack & Java | E-commerce Specialist</p>
+    <p><strong>Full Stack Developer | MERN Stack & Java | E-commerce Specialist</strong></p>
 
-    <!-- About -->
-    <section id="about" class="section">
+    <section id="about">
       <h2>About Me</h2>
       <p>
         I am a passionate Full Stack Developer with experience in building scalable, performant, and modern web applications using the MERN stack and Java. I specialize in developing eCommerce solutions and crafting professional digital experiences.
       </p>
     </section>
 
-    <!-- Skills -->
-    <section id="skills" class="section">
+    <section id="skills">
       <h2>Skills</h2>
       <div class="skills">
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>JavaScript</span>
-        <span>React</span>
-        <span>Node.js</span>
-        <span>MongoDB</span>
-        <span>Express.js</span>
-        <span>Java</span>
-        <span>Git & GitHub</span>
-        <span>REST APIs</span>
+        <span>HTML</span><span>CSS</span><span>JavaScript</span>
+        <span>React</span><span>Node.js</span><span>MongoDB</span>
+        <span>Express.js</span><span>Java</span><span>Git</span><span>REST APIs</span>
       </div>
     </section>
 
-    <!-- Projects -->
-    <section id="projects" class="section">
+    <section id="projects">
       <h2>Projects</h2>
-      <ul>
-        <li><i class="fas fa-laptop-code"></i> <a href="https://ecommerceprojec.netlify.app/" target="_blank">E-Commerce Website</a></li>
-      </ul>
+      <div class="project-card">
+        <img src="https://via.placeholder.com/800x400?text=E-Commerce+Project" alt="E-commerce Project" />
+        <div class="info">
+          <h3>E-Commerce Website</h3>
+          <a href="https://ecommerceprojec.netlify.app/" target="_blank">View Live</a>
+        </div>
+      </div>
     </section>
 
-    <!-- Resume -->
-    <section id="resume" class="section">
+    <section id="resume">
       <h2>Resume</h2>
       <ul>
         <li><i class="fas fa-file-alt"></i> <a href="https://resumeav1.netlify.app/" target="_blank">View My Resume</a></li>
       </ul>
     </section>
 
-    <!-- Contact -->
-    <section id="contact" class="section">
+    <section id="contact">
       <h2>Contact</h2>
       <ul>
         <li><i class="fas fa-envelope"></i> udaykiranbhupathi5@gmail.com</li>
@@ -178,5 +271,12 @@
       © 2025 Bhupathi Uday Kiran. All rights reserved.
     </footer>
   </div>
+
+  <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById('navLinks');
+      navLinks.classList.toggle('show');
+    }
+  </script>
 </body>
 </html>
