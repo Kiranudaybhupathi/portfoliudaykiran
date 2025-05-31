@@ -31,8 +31,10 @@
       color: var(--text-dark);
     }
     nav {
-      position: fixed; top: 0; left: 0; right: 0;
-      background: white; padding: 10px 20px;
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      background: white;
+      padding: 10px 20px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
       display: flex; justify-content: space-between; align-items: center;
       z-index: 1000;
@@ -106,6 +108,31 @@
       opacity: 1;
       transform: translateY(0);
     }
+    .project-card {
+      padding: 15px;
+      background: #e6efff;
+      border-radius: 10px;
+      margin-top: 10px;
+      transition: 0.3s;
+    }
+    .project-card:hover {
+      background: #d0e3ff;
+      transform: translateY(-4px);
+    }
+    .resume-btn {
+      display: inline-block;
+      margin-top: 15px;
+      background: var(--primary);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .resume-btn:hover {
+      background: #1b61d1;
+    }
     footer {
       text-align: center;
       font-size: 0.9rem;
@@ -130,6 +157,7 @@
       <h1>Bhupathi Uday Kiran</h1>
       <p style="text-align:center; font-weight: bold;">Full Stack Developer | MERN Stack & Java | E-commerce Specialist</p>
       <p>I build scalable and modern eCommerce solutions using React, Node.js, MongoDB, and Java.</p>
+      <a class="resume-btn" href="https://resumeav1.netlify.app/" target="_blank">📄 View Resume</a>
     </section>
 
     <section id="skills" class="reveal">
@@ -144,11 +172,11 @@
 
     <section id="projects" class="reveal">
       <h2>Projects</h2>
-      <ul>
-        <li><strong>MyCart:</strong> Full-fledged MERN eCommerce site with payments, cart, and admin dashboard.</li>
-        <li><strong>InstaClone:</strong> Instagram-like full stack app with authentication, posts, likes & comments.</li>
-        <li><strong>Portfolio:</strong> Personal website showcasing my work and contact information.</li>
-      </ul>
+      <div class="project-card">
+        <strong>Ecommerce Projec</strong><br>
+        A full-featured eCommerce web app built using React, Node.js, and MongoDB.<br>
+        🔗 <a href="https://ecommerceprojec.netlify.app/" target="_blank">View Live Project</a>
+      </div>
     </section>
 
     <section id="contact" class="reveal">
