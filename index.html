@@ -2,326 +2,214 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Bhupathi Uday Kiran - Full Stack Developer Portfolio" />
-  <meta name="keywords" content="Full Stack Developer, MERN Stack, Java, E-commerce, Portfolio, Resume, Blog, Capstone Project" />
-  <meta name="author" content="Bhupathi Uday Kiran" />
-  <title>Bhupathi Uday Kiran - Full Stack Developer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Uday Kiran - Portfolio</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: 'Roboto', sans-serif;
-      background: linear-gradient(135deg, #1e3c72, #2a5298);
-      color: #fff;
-      line-height: 1.6;
-      overflow-x: hidden;
-      position: relative;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: white;
+      min-height: 100vh;
+      transition: background 0.3s ease, color 0.3s ease;
+      padding-top: 80px;
     }
-    #smoke {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: -1;
-      opacity: 0.3;
-      pointer-events: none;
+
+    body.dark-mode {
+      background: #f1f1f1;
+      color: #111;
     }
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 30px 20px;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 20px;
-      backdrop-filter: blur(8px);
-      box-shadow: 0 0 20px rgba(0,0,0,0.2);
-    }
-    h1, h2, h3 {
-      text-align: center;
-      margin-bottom: 20px;
-      color: #fff;
-    }
-    h1 {
-      font-size: 2.5rem;
-      margin-top: 20px;
-    }
-    section {
-      margin-top: 40px;
-      padding: 20px;
-      border-radius: 16px;
-      background: rgba(0,0,0,0.2);
-    }
-    a {
-      color: #ffd700;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .projects, .blogs {
-      display: grid;
-      gap: 20px;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    }
-    .card {
-      background: rgba(255, 255, 255, 0.15);
-      border-radius: 12px;
-      padding: 20px;
-      backdrop-filter: blur(6px);
-      transition: 0.3s ease;
-    }
-    .card:hover {
-      transform: scale(1.03);
-      background: rgba(255, 255, 255, 0.25);
-    }
-    .toggle-btn {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background: #222;
-      color: #fff;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 10px;
-      cursor: pointer;
-      z-index: 999;
-    }
-    .dark-mode {
-      background: #0f0f0f;
-      color: #ddd;
-    }
-    footer {
-      text-align: center;
-      margin-top: 50px;
-      font-size: 0.9rem;
-      color: #bbb;
-    }
+
     nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 20px;
-      position: sticky;
+      background: rgba(0,0,0,0.7);
+      position: fixed;
       top: 0;
-      background: rgba(0,0,0,0.5);
-      z-index: 999;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      backdrop-filter: blur(5px);
+      flex-wrap: wrap;
     }
+
+    nav h2 {
+      font-size: 1.5rem;
+    }
+
+    .toggle-btn {
+      position: absolute;
+      top: 18px;
+      right: 60px;
+      background: #333;
+      color: #fff;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    body.dark-mode .toggle-btn {
+      background: #ddd;
+      color: #111;
+    }
+
     .menu {
       display: flex;
       gap: 15px;
+      transition: all 0.3s ease;
     }
+
     .menu a {
       color: white;
-      font-weight: bold;
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      transition: background 0.3s;
     }
+
+    .menu a:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
     .hamburger {
       display: none;
       flex-direction: column;
       cursor: pointer;
+      z-index: 1001;
     }
+
     .hamburger div {
       width: 25px;
       height: 3px;
       background: white;
       margin: 4px;
     }
+
     @media (max-width: 768px) {
       .menu {
         display: none;
         flex-direction: column;
-        background: #222;
         position: absolute;
         top: 70px;
         right: 0;
-        width: 200px;
-        padding: 10px;
+        background: #1c1c1c;
+        padding: 20px;
+        border-radius: 10px 0 0 10px;
+        box-shadow: -4px 4px 12px rgba(0,0,0,0.4);
       }
+
+      .menu a {
+        color: white;
+        padding: 10px 0;
+      }
+
       .menu.active {
         display: flex;
       }
+
       .hamburger {
         display: flex;
       }
     }
-    iframe {
-      width: 100%;
-      border-radius: 12px;
-      margin-top: 10px;
+
+    section {
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    section h1 {
+      font-size: 2.2rem;
+      margin-bottom: 15px;
+    }
+
+    section p {
+      font-size: 1rem;
+      line-height: 1.6;
     }
   </style>
 </head>
 <body>
 
-  <canvas id="smoke"></canvas>
-
-  <button class="toggle-btn" onclick="toggleDark()">🌗 Toggle Mode</button>
-
+  <!-- Navbar -->
   <nav>
     <h2>Uday Kiran</h2>
-    <div class="hamburger" onclick="document.querySelector('.menu').classList.toggle('active')">
-      <div></div><div></div><div></div>
+    <button class="toggle-btn" onclick="toggleDark()">🌗</button>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
-    <div class="menu">
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#capstone">Capstone</a>
-      <a href="#resume">Resume</a>
-      <a href="#blogs">Blogs</a>
-      <a href="#youtube">YouTube</a>
-      <a href="#contact">Contact</a>
+    <div class="menu" id="menu">
+      <a href="#about" onclick="closeMenu()">About</a>
+      <a href="#projects" onclick="closeMenu()">Projects</a>
+      <a href="#capstone" onclick="closeMenu()">Capstone</a>
+      <a href="#resume" onclick="closeMenu()">Resume</a>
+      <a href="#blogs" onclick="closeMenu()">Blogs</a>
+      <a href="#youtube" onclick="closeMenu()">YouTube</a>
+      <a href="#contact" onclick="closeMenu()">Contact</a>
     </div>
   </nav>
 
-  <div class="container">
-    <h1>Bhupathi Uday Kiran</h1>
-    <p style="text-align:center; font-weight: bold;">Software Engineer </p>
+  <!-- Sections -->
+  <section id="about">
+    <h1>About</h1>
+    <p>Hello! I'm Uday Kiran, a passionate developer. This is my personal portfolio site.</p>
+  </section>
 
-    <section id="about" data-aos="fade-up">
-      <h2>About Me</h2>
-      <p>I am a passionate Full Stack Developer experienced in building scalable web applications using MERN stack and Java. I specialize in eCommerce and modern digital solutions.</p>
-    </section>
+  <section id="projects">
+    <h1>Projects</h1>
+    <p>Here you'll find a collection of my work, including full-stack applications and websites.</p>
+  </section>
 
-    <section id="projects" data-aos="fade-right">
-      <h2>Projects</h2>
-      <div class="projects">
-        <div class="card">
-          <h3>Professional E-commerce Website</h3>
-          <p>A full-stack MERN based eCommerce website with cart, payment, and admin dashboard.</p>
-          <a href="https://ecommerceprojec.netlify.app/" target="_blank">Visit Project →</a>
-        </div>
-      </div>
-    </section>
+  <section id="capstone">
+    <h1>Capstone</h1>
+    <p>Details about my final year capstone project and what I built.</p>
+  </section>
 
-    <section id="capstone" data-aos="fade-left">
-      <h2>Capstone Project</h2>
-      <div class="card">
-        <h3>Advanced Machine Learning for Drought Forecasting</h3>
-        <p>This project presents a comprehensive analysis of advanced ML methodologies to forecast agricultural droughts with high precision. We used real-time weather and soil data with LSTM, Random Forest, and hybrid models.</p>
-      </div>
-    </section>
+  <section id="resume">
+    <h1>Resume</h1>
+    <p>Download my resume and view my career journey so far.</p>
+  </section>
 
-    <section id="resume" data-aos="fade-up">
-      <h2>Resume</h2>
-      <div class="card">
-        <p>View or download my professional resume here:</p>
-        <a href="https://resumeav1.netlify.app/" target="_blank">Open Resume →</a>
-      </div>
-    </section>
+  <section id="blogs">
+    <h1>Blogs</h1>
+    <p>I write about tech, development, and career tips here.</p>
+  </section>
 
-    <section id="blogs" data-aos="fade-up">
-      <h2>Blogs</h2>
-      <div class="blogs">
-        <div class="card">
-          <h3>Why MERN is Perfect for eCommerce</h3>
-          <p>Explore how the MERN stack helps create robust, scalable, and maintainable eCommerce solutions.</p>
-          <a href="#">Read More →</a>
-        </div>
-        <div class="card">
-          <h3>Java vs Node.js in 2025</h3>
-          <p>A deep dive comparing performance, use cases, and popularity of Java vs Node.js for backend devs.</p>
-          <a href="#">Read More →</a>
-        </div>
-        <div class="card">
-          <h3>How to Secure a MERN App</h3>
-          <p>Authentication, authorization, JWT, and security best practices for modern web apps.</p>
-          <a href="#">Read More →</a>
-        </div>
-      </div>
-    </section>
+  <section id="youtube">
+    <h1>YouTube</h1>
+    <p>Watch my latest videos, tutorials, and tech breakdowns.</p>
+  </section>
 
-    <section id="youtube" data-aos="fade-up">
-      <h2>YouTube Channel</h2>
-      <div class="card">
-        <p>🎥 My recent video on tech and insights:</p>
-        <iframe 
-          height="315" 
-          src="https://www.youtube.com/embed/MsH3SlYnzVk?autoplay=1&mute=1" 
-          title="YouTube video player" 
-          frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-          allowfullscreen>
-        </iframe>
-        <p style="margin-top: 10px;">
-          🔗 <a href="https://youtube.com/@udaykiran-o8r?si=IKF_MpGZ6YuXjT5k" target="_blank">Visit My Channel →</a>
-        </p>
-      </div>
-    </section>
+  <section id="contact">
+    <h1>Contact</h1>
+    <p>Get in touch with me via email or through my socials.</p>
+  </section>
 
-    <section id="contact" data-aos="fade-in">
-      <h2>Contact</h2>
-      <div class="card">
-        <p>📧 Email: udaykiranbhupathi5@gmail.com</p>
-        <p>🔗 <a href="https://www.linkedin.com/in/uday-kiran" target="_blank">LinkedIn</a></p>
-        <p>💻 <a href="https://github.com/Kiranudaybhupathi" target="_blank">GitHub</a></p>
-      </div>
-    </section>
-
-    <footer>
-      © 2025 Bhupathi Uday Kiran. All rights reserved.
-    </footer>
-  </div>
-
-  <!-- AOS -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init();</script>
-
-  <!-- Toggle Dark Mode -->
+  <!-- Scripts -->
   <script>
     function toggleDark() {
       document.body.classList.toggle('dark-mode');
     }
-  </script>
 
-  <!-- Smoke Background -->
-  <script>
-    const canvas = document.getElementById('smoke');
-    const ctx = canvas.getContext('2d');
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    let particles = [];
-
-    class Particle {
-      constructor() {
-        this.x = Math.random() * canvas.width;
-        this.y = canvas.height + Math.random() * 100;
-        this.size = Math.random() * 20 + 10;
-        this.speedY = Math.random() * -1 - 0.5;
-        this.alpha = Math.random() * 0.2 + 0.05;
-      }
-      update() {
-        this.y += this.speedY;
-        if (this.y < 0) {
-          this.y = canvas.height + Math.random() * 100;
-          this.x = Math.random() * canvas.width;
-        }
-      }
-      draw() {
-        ctx.fillStyle = `rgba(255,255,255,${this.alpha})`;
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fill();
-      }
+    function toggleMenu() {
+      document.getElementById('menu').classList.toggle('active');
     }
 
-    function init() {
-      for (let i = 0; i < 100; i++) {
-        particles.push(new Particle());
-      }
+    function closeMenu() {
+      document.getElementById('menu').classList.remove('active');
     }
-
-    function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      particles.forEach(p => {
-        p.update();
-        p.draw();
-      });
-      requestAnimationFrame(animate);
-    }
-
-    init();
-    animate();
   </script>
 </body>
 </html>
