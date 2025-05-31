@@ -4,212 +4,179 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Bhupathi Uday Kiran - Full Stack Developer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <style>
-    :root {
-      --bg-light: #f0f4f8;
-      --bg-dark: #1e293b;
-      --text-light: #102a43;
-      --text-dark: #f8fafc;
-      --card-light: #ffffff;
-      --card-dark: #334155;
-      --primary: #2f80ed;
-    }
     * {
-      margin: 0; padding: 0; box-sizing: border-box;
-      scroll-behavior: smooth;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
+
     body {
-      font-family: 'Roboto', sans-serif;
-      background: var(--bg-light);
-      color: var(--text-light);
-      transition: background 0.5s, color 0.5s;
-      padding-top: 60px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+      color: #102a43;
+      padding: 20px;
+      line-height: 1.6;
     }
-    body.dark {
-      background: var(--bg-dark);
-      color: var(--text-dark);
-    }
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      background: white;
-      padding: 10px 20px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      display: flex; justify-content: space-between; align-items: center;
-      z-index: 1000;
-    }
-    nav a {
-      margin: 0 10px;
-      color: var(--primary);
-      text-decoration: none;
-      font-weight: 500;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    .toggle-btn {
-      background: var(--primary);
-      color: white;
-      border: none;
-      padding: 6px 12px;
-      border-radius: 6px;
-      cursor: pointer;
-    }
+
     .container {
-      max-width: 850px;
-      margin: auto;
-      padding: 20px;
-    }
-    section {
-      background: var(--card-light);
-      padding: 20px;
-      margin: 30px 0;
+      max-width: 900px;
+      margin: 0 auto;
+      background: white;
+      padding: 30px;
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      transition: 0.3s;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
-    body.dark section {
-      background: var(--card-dark);
-    }
-    section:hover {
-      transform: translateY(-5px);
-    }
+
     h1 {
       font-size: 2.5rem;
-      color: var(--primary);
+      color: #334e68;
+      margin-bottom: 10px;
       text-align: center;
     }
+
     h2 {
-      border-bottom: 2px solid #d9e2ec;
-      margin-bottom: 10px;
-      padding-bottom: 5px;
+      font-size: 1.8rem;
       color: #486581;
+      margin-top: 40px;
+      margin-bottom: 10px;
+      border-bottom: 2px solid #d9e2ec;
+      padding-bottom: 5px;
     }
+
+    p {
+      margin-bottom: 10px;
+    }
+
     ul {
       list-style: none;
       padding-left: 0;
     }
+
     li {
       margin: 8px 0;
+      display: flex;
+      align-items: center;
     }
+
     a {
-      color: var(--primary);
+      color: #2f80ed;
+      text-decoration: none;
+      transition: all 0.3s ease;
     }
+
     a:hover {
       text-decoration: underline;
+      color: #1c63d6;
     }
-    .reveal {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.6s ease-out;
+
+    ul li i {
+      margin-right: 10px;
+      color: #2f80ed;
+      min-width: 20px;
     }
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
+
+    .section:hover {
+      transform: translateY(-2px);
+      transition: 0.3s ease-in-out;
     }
-    .project-card {
-      padding: 15px;
-      background: #e6efff;
-      border-radius: 10px;
-      margin-top: 10px;
-      transition: 0.3s;
-    }
-    .project-card:hover {
-      background: #d0e3ff;
-      transform: translateY(-4px);
-    }
-    .resume-btn {
+
+    .skills span {
       display: inline-block;
-      margin-top: 10px;
-      background: var(--primary);
-      color: white;
-      padding: 10px 20px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
+      background: #e3ebf6;
+      color: #1a3d5d;
+      padding: 6px 12px;
+      border-radius: 20px;
+      margin: 5px;
+      font-size: 0.95rem;
       transition: background 0.3s;
     }
-    .resume-btn:hover {
-      background: #1b61d1;
+
+    .skills span:hover {
+      background: #c1d3ec;
     }
+
     footer {
+      margin-top: 40px;
       text-align: center;
       font-size: 0.9rem;
-      margin: 40px 0;
       color: #829ab1;
+    }
+
+    @media screen and (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      h2 {
+        font-size: 1.4rem;
+      }
     }
   </style>
 </head>
 <body>
-  <nav>
-    <div>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#resume">Resume</a>
-      <a href="#contact">Contact</a>
-    </div>
-    <button class="toggle-btn" onclick="toggleDarkMode()">🌙 Dark Mode</button>
-  </nav>
-
   <div class="container">
-    <section id="about" class="reveal">
-      <h1>Bhupathi Uday Kiran</h1>
-      <p style="text-align:center; font-weight: bold;">Full Stack Developer | MERN Stack & Java | E-commerce Specialist</p>
-      <p>I build scalable and modern eCommerce solutions using React, Node.js, MongoDB, and Java.</p>
+    <h1>Bhupathi Uday Kiran</h1>
+    <p style="text-align:center; font-weight: bold;">Full Stack Developer | MERN Stack & Java | E-commerce Specialist</p>
+
+    <!-- About -->
+    <section id="about" class="section">
+      <h2>About Me</h2>
+      <p>
+        I am a passionate Full Stack Developer with experience in building scalable, performant, and modern web applications using the MERN stack and Java. I specialize in developing eCommerce solutions and crafting professional digital experiences.
+      </p>
     </section>
 
-    <section id="skills" class="reveal">
+    <!-- Skills -->
+    <section id="skills" class="section">
       <h2>Skills</h2>
-      <ul>
-        <li>Frontend: React, HTML5, CSS3, JavaScript, Tailwind CSS</li>
-        <li>Backend: Node.js, Express.js, Java</li>
-        <li>Database: MongoDB, MySQL</li>
-        <li>Tools: Git, GitHub, Postman, VS Code</li>
-      </ul>
-    </section>
-
-    <section id="projects" class="reveal">
-      <h2>Projects</h2>
-      <div class="project-card">
-        <strong>Ecommerce Project</strong><br>
-        A full-featured eCommerce web app built using React, Node.js, and MongoDB.<br>
-        🔗 <a href="https://ecommerceprojec.netlify.app/" target="_blank">View Live Project</a>
+      <div class="skills">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>React</span>
+        <span>Node.js</span>
+        <span>MongoDB</span>
+        <span>Express.js</span>
+        <span>Java</span>
+        <span>Git & GitHub</span>
+        <span>REST APIs</span>
       </div>
     </section>
 
-    <section id="resume" class="reveal">
-      <h2>Resume</h2>
-      <p>Click the button below to view my updated resume:</p>
-      <a class="resume-btn" href="https://resumeav1.netlify.app/" target="_blank">📄 View Resume</a>
-    </section>
-
-    <section id="contact" class="reveal">
-      <h2>Contact</h2>
+    <!-- Projects -->
+    <section id="projects" class="section">
+      <h2>Projects</h2>
       <ul>
-        <li>Email: <a href="mailto:udaykiranbhupathi5@gmail.com">udaykiranbhupathi5@gmail.com</a></li>
-        <li>LinkedIn: <a href="https://www.linkedin.com/in/uday-kiran" target="_blank">linkedin.com/in/uday-kiran</a></li>
-        <li>GitHub: <a href="https://github.com/Kiranudaybhupathi" target="_blank">github.com/Kiranudaybhupathi</a></li>
+        <li><i class="fas fa-laptop-code"></i> <a href="https://ecommerceprojec.netlify.app/" target="_blank">E-Commerce Website</a></li>
       </ul>
     </section>
 
-    <footer>© 2025 Bhupathi Uday Kiran. All rights reserved.</footer>
-  </div>
+    <!-- Resume -->
+    <section id="resume" class="section">
+      <h2>Resume</h2>
+      <ul>
+        <li><i class="fas fa-file-alt"></i> <a href="https://resumeav1.netlify.app/" target="_blank">View My Resume</a></li>
+      </ul>
+    </section>
 
-  <script>
-    function toggleDarkMode() {
-      document.body.classList.toggle('dark');
-    }
-    const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active');
-        }
-      });
-    }, { threshold: 0.1 });
-    reveals.forEach(section => observer.observe(section));
-  </script>
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <ul>
+        <li><i class="fas fa-envelope"></i> udaykiranbhupathi5@gmail.com</li>
+        <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/uday-kiran" target="_blank">linkedin.com/in/uday-kiran</a></li>
+        <li><i class="fab fa-github"></i> <a href="https://github.com/Kiranudaybhupathi" target="_blank">github.com/Kiranudaybhupathi</a></li>
+      </ul>
+    </section>
+
+    <footer>
+      © 2025 Bhupathi Uday Kiran. All rights reserved.
+    </footer>
+  </div>
 </body>
 </html>
