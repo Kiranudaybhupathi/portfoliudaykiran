@@ -7,21 +7,91 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
       font-family: 'Roboto', sans-serif;
+      transition: background 1s, color 1s;
       background: linear-gradient(270deg, #1e3c72, #2a5298, #1e3c72);
       background-size: 600% 600%;
       animation: gradientFlow 20s ease infinite;
       color: #fff;
-      line-height: 1.6;
       overflow-x: hidden;
-      position: relative;
+    }
+
+    body.dark {
+      background: linear-gradient(270deg, #0f0f0f, #1c1c1c, #0f0f0f);
+      color: #ddd;
     }
 
     @keyframes gradientFlow {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
+    }
+
+    header {
+      text-align: center;
+      position: relative;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background-color: rgba(0, 0, 0, 0.2);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: #fcd34d;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #fbbf24;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background: #fcd34d;
+      margin: 4px 0;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        flex-direction: column;
+        width: 200px;
+        display: none;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
     }
 
     #smoke {
@@ -39,25 +109,10 @@
       max-width: 1000px;
       margin: auto;
       padding: 30px 20px;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 20px;
-      backdrop-filter: blur(8px);
-      box-shadow: 0 0 20px rgba(0,0,0,0.2);
     }
 
     h1, h2 {
-      color: #fff;
       margin-bottom: 10px;
-    }
-
-    a {
-      color: #fcd34d;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    a:hover {
-      color: #fbbf24;
     }
 
     .profile-img {
@@ -71,6 +126,11 @@
 
     .section {
       margin-bottom: 40px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
     }
 
     ul {
@@ -84,6 +144,29 @@
       font-weight: bold;
     }
 
+    .btn {
+      background: #fcd34d;
+      color: #000;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 30px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+      margin-top: 10px;
+    }
+
+    .btn:hover {
+      background: #fbbf24;
+    }
+
+    .toggle-theme {
+      position: absolute;
+      top: 15px;
+      right: 30px;
+      cursor: pointer;
+    }
+
     footer {
       text-align: center;
       margin-top: 40px;
@@ -94,8 +177,23 @@
 <body>
   <canvas id="smoke"></canvas>
 
+  <nav class="navbar">
+    <div><strong>UDAY</strong></div>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="#">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#resume">Resume</a>
+      <a href="mailto:udaykiranbhupathi5@gmail.com">Contact</a>
+    </div>
+    <div class="toggle-theme" onclick="toggleTheme()">🌗</div>
+  </nav>
+
   <div class="container">
-    <header style="text-align: center;">
+    <header>
       <img src="profile.jpg" alt="Uday Kiran" class="profile-img"/>
       <h1>Bhupathi Uday Kiran</h1>
       <h2>Full Stack Developer (MERN + Java)</h2>
@@ -106,21 +204,22 @@
       </p>
     </header>
 
-    <section class="section">
+    <section class="section" id="about">
       <h2>About Me</h2>
-      <p>I am a Full Stack Developer with expertise in building eCommerce websites using the MERN stack (MongoDB, Express, React, Node.js) and Java. I am passionate about crafting clean and efficient code, and I enjoy turning ideas into functional applications.</p>
+      <p>I am a Full Stack Developer with expertise in building eCommerce websites using the MERN stack (MongoDB, Express, React, Node.js) and Java.</p>
+      <button class="btn" onclick="alert('Thanks for checking out!')">Say Hi 👋</button>
     </section>
 
-    <section class="section">
+    <section class="section" id="projects">
       <h2>Projects</h2>
       <ul>
-        <li><strong>Professional eCommerce App:</strong> A full-stack application with authentication, cart, admin panel, and payment system.</li>
-        <li><strong>Instagram Clone:</strong> A social media platform with features like posts, likes, comments, and user profiles.</li>
-        <li><strong>HTML/CSS eCommerce Landing Page:</strong> A responsive and modern landing page with hamburger menu and animations.</li>
+        <li><strong>eCommerce App:</strong> Full-stack with authentication, cart, admin panel, and payments.</li>
+        <li><strong>Instagram Clone:</strong> Social platform with posts, likes, and profiles.</li>
+        <li><strong>Landing Page:</strong> Responsive HTML/CSS with animations.</li>
       </ul>
     </section>
 
-    <section class="section">
+    <section class="section" id="skills">
       <h2>Skills</h2>
       <ul>
         <li>Frontend: React.js, HTML, CSS, Tailwind</li>
@@ -130,9 +229,9 @@
       </ul>
     </section>
 
-    <section class="section">
+    <section class="section" id="resume">
       <h2>Resume Website</h2>
-      <p>Visit my online resume: <a href="https://kiranudaybhupathi.github.io/Resume-/" target="_blank">Resume Website</a></p>
+      <p>Visit: <a href="https://kiranudaybhupathi.github.io/Resume-/" target="_blank">My Online Resume</a></p>
     </section>
 
     <footer>
@@ -143,15 +242,12 @@
   <script>
     const canvas = document.getElementById('smoke');
     const ctx = canvas.getContext('2d');
+    let particles = [];
 
     function resizeCanvas() {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     }
-    window.addEventListener('resize', resizeCanvas);
-    resizeCanvas();
-
-    let particles = [];
 
     class Particle {
       constructor() {
@@ -161,9 +257,9 @@
       reset() {
         this.x = Math.random() * canvas.width;
         this.y = canvas.height + Math.random() * 100;
-        this.size = Math.random() * 20 + 15;
+        this.size = Math.random() * 20 + 10;
         this.speedY = Math.random() * -0.5 - 0.2;
-        this.alpha = Math.random() * 0.15 + 0.05;
+        this.alpha = Math.random() * 0.2 + 0.05;
         this.speedX = Math.random() * 1 - 0.5;
       }
 
@@ -184,7 +280,7 @@
       }
     }
 
-    function initParticles(count = 150) {
+    function initParticles(count = 120) {
       particles = [];
       for (let i = 0; i < count; i++) {
         particles.push(new Particle());
@@ -200,6 +296,16 @@
       requestAnimationFrame(animate);
     }
 
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+    }
+
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('show');
+    }
+
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
     initParticles();
     animate();
   </script>
