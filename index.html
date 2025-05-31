@@ -2,233 +2,213 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Uday Kiran - Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Bhupathi Uday Kiran - Full Stack Developer Portfolio" />
+  <meta name="keywords" content="Full Stack Developer, MERN Stack, Java, E-commerce, Portfolio, Resume, Blog, Capstone Project" />
+  <meta name="author" content="Bhupathi Uday Kiran" />
+  <title>Bhupathi Uday Kiran - Full Stack Developer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-      color: white;
-      min-height: 100vh;
-      transition: background 0.3s ease, color 0.3s ease;
-      scroll-behavior: smooth;
-      padding-top: 80px;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: #fff;
+      line-height: 1.6;
+      overflow-x: hidden;
     }
-
-    body.dark-mode {
-      background: #f1f1f1;
-      color: #111;
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 30px 20px;
     }
-
+    h1, h2, h3 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    section {
+      margin-top: 40px;
+      padding: 20px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.1);
+    }
     nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 20px;
-      background: rgba(0,0,0,0.7);
-      position: fixed;
+      position: sticky;
       top: 0;
-      left: 0;
-      width: 100%;
+      background: rgba(0,0,0,0.6);
       z-index: 1000;
-      backdrop-filter: blur(5px);
-      flex-wrap: wrap;
     }
-
-    nav h2 {
-      font-size: 1.5rem;
-    }
-
-    .toggle-btn {
-      position: absolute;
-      top: 18px;
-      right: 60px;
-      background: #333;
-      color: #fff;
-      border: none;
-      padding: 8px 12px;
-      border-radius: 8px;
-      cursor: pointer;
-      z-index: 1001;
-    }
-
-    body.dark-mode .toggle-btn {
-      background: #ddd;
-      color: #111;
-    }
-
     .menu {
       display: flex;
-      gap: 15px;
-      transition: all 0.3s ease;
+      gap: 20px;
     }
-
     .menu a {
       color: white;
+      font-weight: bold;
       text-decoration: none;
-      padding: 8px 12px;
-      border-radius: 5px;
-      transition: background 0.3s;
     }
-
-    .menu a:hover {
-      background: rgba(255, 255, 255, 0.2);
-    }
-
     .hamburger {
       display: none;
       flex-direction: column;
       cursor: pointer;
-      z-index: 1001;
     }
-
     .hamburger div {
       width: 25px;
       height: 3px;
       background: white;
-      margin: 4px;
+      margin: 4px 0;
     }
-
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 12px;
+    }
+    a {
+      color: #ffd700;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .toggle-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 10px;
+      background: #000;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
     @media (max-width: 768px) {
       .menu {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 70px;
+        background: #222;
         right: 0;
-        background: #1c1c1c;
-        padding: 20px;
-        border-radius: 10px 0 0 10px;
-        box-shadow: -4px 4px 12px rgba(0,0,0,0.4);
+        top: 60px;
+        width: 200px;
+        padding: 10px;
       }
-
-      .menu a {
-        color: white;
-        padding: 10px 0;
-      }
-
       .menu.active {
         display: flex;
       }
-
       .hamburger {
         display: flex;
       }
     }
-
-    section {
-      padding: 60px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    section h1 {
-      font-size: 2.2rem;
-      margin-bottom: 15px;
-    }
-
-    section p {
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-
-    a.button {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 10px 20px;
-      background-color: #ff6347;
-      color: white;
-      border-radius: 8px;
-      text-decoration: none;
-    }
-
-    a.button:hover {
-      background-color: #ff8269;
-    }
   </style>
 </head>
 <body>
+  <button class="toggle-btn" onclick="document.body.classList.toggle('dark')">🌗 Toggle Mode</button>
 
-  <!-- Navbar -->
   <nav>
     <h2>Uday Kiran</h2>
-    <button class="toggle-btn" onclick="toggleDark()">🌗</button>
-    <div class="hamburger" onclick="toggleMenu()">
-      <div></div>
-      <div></div>
-      <div></div>
+    <div class="hamburger" onclick="document.querySelector('.menu').classList.toggle('active')">
+      <div></div><div></div><div></div>
     </div>
-    <div class="menu" id="menu">
-      <a href="#about" onclick="closeMenu()">About</a>
-      <a href="#projects" onclick="closeMenu()">Projects</a>
-      <a href="#capstone" onclick="closeMenu()">Capstone</a>
-      <a href="#resume" onclick="closeMenu()">Resume</a>
-      <a href="#blogs" onclick="closeMenu()">Blogs</a>
-      <a href="#youtube" onclick="closeMenu()">YouTube</a>
-      <a href="#contact" onclick="closeMenu()">Contact</a>
+    <div class="menu">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#capstone">Capstone</a>
+      <a href="#resume">Resume</a>
+      <a href="#blogs">Blogs</a>
+      <a href="#youtube">YouTube</a>
+      <a href="#contact">Contact</a>
     </div>
   </nav>
 
-  <!-- Sections -->
-  <section id="about">
-    <h1>About</h1>
-    <p>Hello! I'm <strong>Uday Kiran</strong>, a full stack web developer (MERN stack + Java) passionate about building impactful digital experiences. Welcome to my portfolio website.</p>
-  </section>
+  <div class="container">
+    <h1>Bhupathi Uday Kiran</h1>
+    <p style="text-align:center;">Full Stack Developer | MERN | Java | eCommerce Specialist</p>
 
-  <section id="projects">
-    <h1>Projects</h1>
-    <p>I’ve worked on a variety of full stack projects. Check out my GitHub for source code:</p>
-    <a href="https://github.com/Kiranudaybhupathi" class="button" target="_blank">My GitHub</a>
-  </section>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>I am a passionate Full Stack Developer with expertise in MERN Stack and Java. I create scalable eCommerce platforms and modern digital experiences.</p>
+    </section>
 
-  <section id="capstone">
-    <h1>Capstone</h1>
-    <p>My final-year capstone project was a scalable ecommerce application with features like real-time cart, admin panel, payment integration, and user authentication using MERN stack.</p>
-  </section>
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="card">
+        <h3>Professional E-commerce Website</h3>
+        <p>A full-stack eCommerce platform built with the MERN stack, complete with cart, payment integration, and admin dashboard.</p>
+        <a href="https://udaykiran-store.netlify.app/" target="_blank">Visit Project →</a>
+      </div>
+    </section>
 
-  <section id="resume">
-    <h1>Resume</h1>
-    <p>View and download my latest resume with all details:</p>
-    <a href="https://kiranudaybhupathi.github.io/Resume-/UdayKiran_Resume.pdf" class="button" target="_blank">Download Resume</a>
-  </section>
+    <section id="capstone">
+      <h2>Capstone Project</h2>
+      <div class="card">
+        <h3>Advanced Machine Learning Methodologies for Precise Agriculture Forecasting</h3>
+        <p>This capstone focuses on using LSTM, Random Forest, and hybrid ML models for accurate prediction of agricultural droughts and resource optimization in Indian farming regions.</p>
+      </div>
+    </section>
 
-  <section id="blogs">
-    <h1>Blogs</h1>
-    <p>I share development tips, career insights, and personal learnings here. Coming soon on Hashnode or Medium!</p>
-  </section>
+    <section id="resume">
+      <h2>Resume</h2>
+      <div class="card">
+        <p>View or download my resume:</p>
+        <a href="https://resumeav1.netlify.app/" target="_blank">Open Resume →</a>
+      </div>
+    </section>
 
-  <section id="youtube">
-    <h1>YouTube</h1>
-    <p>I create Telugu-English tech explainers and truth-based videos like Dhruv Rathee. Subscribe to follow the journey:</p>
-    <a href="https://youtube.com/@yourchannel" class="button" target="_blank">Visit YouTube Channel</a>
-  </section>
+    <section id="blogs">
+      <h2>Blogs</h2>
+      <div class="card">
+        <h3>1. Why MERN Stack is Ideal for eCommerce (1200 words)</h3>
+        <p>Explore why MongoDB, Express, React, and Node.js form the best stack for building fast, secure, and scalable eCommerce apps...</p>
+      </div>
+      <div class="card">
+        <h3>2. Comparing Java and Node.js in 2025 (900 words)</h3>
+        <p>This blog explores the evolving backend battle between traditional Java and modern JavaScript runtime Node.js for scalable web apps...</p>
+      </div>
+      <div class="card">
+        <h3>3. Securing Your MERN Application (1000 words)</h3>
+        <p>Learn about authentication (JWT), authorization, CORS, and data validation techniques that make MERN apps secure in production...</p>
+      </div>
+      <div class="card">
+        <h3>4. Building Real-time Features in MERN (1000 words)</h3>
+        <p>Understand how to add real-time chat, notifications, and live updates using Socket.IO and WebSockets with MERN stack...</p>
+      </div>
+      <div class="card">
+        <h3>5. DevOps for MERN Projects (800 words)</h3>
+        <p>How CI/CD, GitHub Actions, Docker, and deployment best practices take your MERN project from development to live production...</p>
+      </div>
+    </section>
 
-  <section id="contact">
-    <h1>Contact</h1>
-    <p>📧 Email: <a href="mailto:udaykiranbhupathi5@gmail.com">udaykiranbhupathi5@gmail.com</a><br/>
-       💼 LinkedIn: <a href="https://www.linkedin.com/in/uday-kiran-8a9781235/" target="_blank">linkedin.com/in/uday-kiran</a>
-    </p>
-  </section>
+    <section id="youtube">
+      <h2>YouTube Channel</h2>
+      <div class="card">
+        <p>🎥 Check out my channel for tech videos, tutorials, and career advice.</p>
+        <img src="https://img.youtube.com/vi/MsH3SlYnzVk/0.jpg" alt="YouTube Thumbnail" style="width:100%; border-radius:12px; margin-top:10px;" />
+        <p style="margin-top: 10px;">
+          🔗 <a href="https://youtube.com/@udaykiran-o8r?si=atXXjWIe1Bc1L3og" target="_blank">Visit My Channel →</a>
+        </p>
+      </div>
+    </section>
 
-  <!-- Scripts -->
-  <script>
-    function toggleDark() {
-      document.body.classList.toggle('dark-mode');
-    }
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="card">
+        <p>📧 Email: udaykiranbhupathi5@gmail.com</p>
+        <p>🔗 <a href="https://www.linkedin.com/in/uday-kiran" target="_blank">LinkedIn</a></p>
+        <p>💻 <a href="https://github.com/Kiranudaybhupathi" target="_blank">GitHub</a></p>
+      </div>
+    </section>
 
-    function toggleMenu() {
-      document.getElementById('menu').classList.toggle('active');
-    }
+    <footer style="text-align:center; margin-top:30px; font-size:0.9rem;">
+      © 2025 Bhupathi Uday Kiran. All rights reserved.
+    </footer>
+  </div>
 
-    function closeMenu() {
-      document.getElementById('menu').classList.remove('active');
-    }
-  </script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
 </body>
 </html>
