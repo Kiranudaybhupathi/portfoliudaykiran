@@ -3,231 +3,257 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Bhupathi Uday Kiran - Full Stack Developer Portfolio" />
+  <meta name="keywords" content="Full Stack Developer, MERN Stack, Java, E-commerce, Portfolio, Resume, Blog, Capstone Project" />
+  <meta name="author" content="Bhupathi Uday Kiran" />
   <title>Bhupathi Uday Kiran - Full Stack Developer</title>
-  <meta name="description" content="Portfolio of Bhupathi Uday Kiran - Full Stack Developer specializing in MERN stack, Java, and eCommerce platforms.">
-  <meta name="keywords" content="Uday Kiran, Full Stack Developer, MERN, Java, eCommerce, Portfolio">
-  <meta name="author" content="Bhupathi Uday Kiran">
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
-    * {
-      margin: 0; padding: 0; box-sizing: border-box;
-    }
-
+    /* Reset and Base */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: 'Segoe UI', sans-serif;
-      transition: background 0.3s, color 0.3s;
-      scroll-behavior: smooth;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: #fff;
+      line-height: 1.6;
       overflow-x: hidden;
+      position: relative;
     }
 
-    body.light {
-      background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
-      color: #102a43;
-    }
-
-    body.dark {
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      color: #f1f1f1;
-    }
-
-    .smoke-bg {
+    /* Smoke Canvas */
+    #smoke {
       position: fixed;
       top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('https://i.gifer.com/3oEj.gif') center/cover no-repeat;
-      opacity: 0.1;
+      width: 100vw;
+      height: 100vh;
       z-index: -1;
+      opacity: 0.3;
       pointer-events: none;
     }
 
     .container {
       max-width: 1000px;
       margin: auto;
-      padding: 2rem;
+      padding: 30px 20px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
     }
 
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem;
-      position: sticky;
-      top: 0;
-      background-color: rgba(255, 255, 255, 0.9);
-      z-index: 10;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    h1, h2, h3 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #fff;
     }
 
-    header.dark {
-      background-color: rgba(0, 0, 0, 0.8);
-    }
-
-    nav {
-      display: flex;
-      gap: 1.5rem;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: inherit;
-      font-weight: bold;
-    }
-
-    .toggle-mode {
-      cursor: pointer;
-      font-size: 1.2rem;
+    h1 {
+      font-size: 2.5rem;
+      margin-top: 20px;
     }
 
     section {
-      margin-top: 3rem;
-      padding: 2rem;
-      border-radius: 15px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-      background: rgba(255,255,255,0.9);
+      margin-top: 40px;
+      padding: 20px;
+      border-radius: 16px;
+      background: rgba(0,0,0,0.2);
     }
 
-    body.dark section {
-      background: rgba(0,0,0,0.3);
+    a {
+      color: #ffd700;
+      text-decoration: none;
     }
 
-    h2 {
-      margin-bottom: 1rem;
-      color: #2f80ed;
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .projects, .blogs {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
 
     .card {
-      padding: 1rem;
-      border-radius: 10px;
-      margin: 1rem 0;
-      background: #e0f2ff;
-      transition: 0.3s;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
+      padding: 20px;
+      backdrop-filter: blur(6px);
+      transition: 0.3s ease;
     }
 
     .card:hover {
-      transform: scale(1.02);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-    }
-
-    .card.dark {
-      background: #1e3a5f;
-    }
-
-    .blog .read-more {
-      display: none;
-    }
-
-    .blog.open .read-more {
-      display: block;
+      transform: scale(1.03);
+      background: rgba(255, 255, 255, 0.25);
     }
 
     .toggle-btn {
-      background: #2f80ed;
-      color: white;
-      padding: 5px 10px;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #222;
+      color: #fff;
       border: none;
-      border-radius: 5px;
-      margin-top: 10px;
+      padding: 10px 15px;
+      border-radius: 10px;
       cursor: pointer;
+      z-index: 999;
+    }
+
+    .dark-mode {
+      background: #0f0f0f;
+      color: #ddd;
     }
 
     footer {
       text-align: center;
-      padding: 1rem;
-      color: #829ab1;
+      margin-top: 50px;
+      font-size: 0.9rem;
+      color: #bbb;
     }
 
-    .icon {
-      margin-right: 0.5rem;
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      position: sticky;
+      top: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 999;
     }
 
-    @media (max-width: 768px) {
-      nav {
-        display: none;
-        flex-direction: column;
-        gap: 1rem;
-      }
+    .menu {
+      display: flex;
+      gap: 15px;
+    }
 
-      nav.active {
-        display: flex;
-      }
-
-      .hamburger {
-        display: block;
-        font-size: 1.5rem;
-        cursor: pointer;
-      }
+    .menu a {
+      color: white;
+      font-weight: bold;
     }
 
     .hamburger {
       display: none;
+      flex-direction: column;
+      cursor: pointer;
     }
 
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background: white;
+      margin: 4px;
+    }
+
+    @media (max-width: 768px) {
+      .menu {
+        display: none;
+        flex-direction: column;
+        background: #222;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 200px;
+        padding: 10px;
+      }
+
+      .menu.active {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
   </style>
 </head>
-<body class="light">
-  <div class="smoke-bg"></div>
-  <header id="header">
-    <h3>Uday Kiran</h3>
-    <div class="hamburger" onclick="toggleMenu()">☰</div>
-    <nav id="nav-links">
+<body>
+
+  <canvas id="smoke"></canvas>
+
+  <button class="toggle-btn" onclick="toggleDark()">🌗 Toggle Mode</button>
+
+  <nav>
+    <h2>Uday Kiran</h2>
+    <div class="hamburger" onclick="document.querySelector('.menu').classList.toggle('active')">
+      <div></div><div></div><div></div>
+    </div>
+    <div class="menu">
       <a href="#about">About</a>
-      <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
       <a href="#capstone">Capstone</a>
-      <a href="#blogs">Blogs</a>
       <a href="#resume">Resume</a>
+      <a href="#blogs">Blogs</a>
       <a href="#contact">Contact</a>
-    </nav>
-    <span class="toggle-mode" onclick="toggleMode()">🌓</span>
-  </header>
+    </div>
+  </nav>
 
   <div class="container">
+    <h1>Bhupathi Uday Kiran</h1>
+    <p style="text-align:center; font-weight: bold;">Full Stack Developer | MERN Stack & Java | E-commerce Specialist</p>
 
     <section id="about" data-aos="fade-up">
       <h2>About Me</h2>
-      <p>I'm Bhupathi Uday Kiran, a Full Stack Developer (MERN & Java) specialized in eCommerce development. I build clean, scalable, performant digital solutions.</p>
+      <p>I am a passionate Full Stack Developer experienced in building scalable web applications using MERN stack and Java. I specialize in eCommerce and modern digital solutions.</p>
     </section>
 
-    <section id="skills" data-aos="fade-right">
-      <h2>Skills</h2>
-      <ul>
-        <li>React, Node.js, Express, MongoDB</li>
-        <li>Java, Spring Boot</li>
-        <li>HTML, CSS, JavaScript</li>
-        <li>Git, GitHub, REST APIs</li>
-      </ul>
-    </section>
-
-    <section id="projects" data-aos="fade-left">
+    <section id="projects" data-aos="fade-right">
       <h2>Projects</h2>
-      <div id="project-list"></div>
+      <div class="projects">
+        <div class="card">
+          <h3>Professional E-commerce Website</h3>
+          <p>A full-stack MERN based eCommerce website with cart, payment, and admin dashboard.</p>
+          <a href="https://ecommerceprojec.netlify.app/" target="_blank">Visit Project →</a>
+        </div>
+      </div>
     </section>
 
-    <section id="capstone" data-aos="zoom-in">
+    <section id="capstone" data-aos="fade-left">
       <h2>Capstone Project</h2>
       <div class="card">
-        <h4>Advanced Machine Learning Methodologies for Precision Agricultural Drought Forecasting</h4>
-        <p>This capstone explores advanced ML algorithms to accurately forecast droughts based on real-time agricultural data. The study integrates climate models, satellite imagery, and predictive analytics to enhance decision-making in precision farming.</p>
+        <h3>Advanced Machine Learning for Drought Forecasting</h3>
+        <p>This project presents a comprehensive analysis of advanced ML methodologies to forecast agricultural droughts with high precision. We used real-time weather and soil data with LSTM, Random Forest, and hybrid models.</p>
+      </div>
+    </section>
+
+    <section id="resume" data-aos="fade-up">
+      <h2>Resume</h2>
+      <div class="card">
+        <p>View or download my professional resume here:</p>
+        <a href="https://resumeav1.netlify.app/" target="_blank">Open Resume →</a>
       </div>
     </section>
 
     <section id="blogs" data-aos="fade-up">
       <h2>Blogs</h2>
-      <div id="blog-list"></div>
+      <div class="blogs">
+        <div class="card">
+          <h3>Why MERN is Perfect for eCommerce</h3>
+          <p>Explore how the MERN stack helps create robust, scalable, and maintainable eCommerce solutions.</p>
+          <a href="#">Read More →</a>
+        </div>
+        <div class="card">
+          <h3>Java vs Node.js in 2025</h3>
+          <p>A deep dive comparing performance, use cases, and popularity of Java vs Node.js for backend devs.</p>
+          <a href="#">Read More →</a>
+        </div>
+        <div class="card">
+          <h3>How to Secure a MERN App</h3>
+          <p>Authentication, authorization, JWT, and security best practices for modern web apps.</p>
+          <a href="#">Read More →</a>
+        </div>
+      </div>
     </section>
 
-    <section id="resume" data-aos="fade-left">
-      <h2>Resume</h2>
-      <p><a href="https://resumeav1.netlify.app/" target="_blank">View My Resume Here</a></p>
-    </section>
-
-    <section id="contact" data-aos="fade-up">
+    <section id="contact" data-aos="fade-in">
       <h2>Contact</h2>
-      <p><span class="icon">📧</span> udaykiranbhupathi5@gmail.com</p>
-      <p><span class="icon">🔗</span> <a href="https://www.linkedin.com/in/uday-kiran" target="_blank">LinkedIn</a></p>
-      <p><span class="icon">💻</span> <a href="https://github.com/Kiranudaybhupathi" target="_blank">GitHub</a></p>
+      <div class="card">
+        <p>📧 Email: udaykiranbhupathi5@gmail.com</p>
+        <p>🔗 <a href="https://www.linkedin.com/in/uday-kiran" target="_blank">LinkedIn</a></p>
+        <p>💻 <a href="https://github.com/Kiranudaybhupathi" target="_blank">GitHub</a></p>
+      </div>
     </section>
 
     <footer>
@@ -235,70 +261,66 @@
     </footer>
   </div>
 
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
+
+  <!-- Toggle Dark Mode -->
   <script>
-    AOS.init();
+    function toggleDark() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
 
-    const projects = [
-      {
-        name: "Professional eCommerce Website",
-        description: "A full-featured MERN eCommerce app with authentication, cart, admin panel, and Stripe integration.",
-        link: "https://ecommerceprojec.netlify.app/"
-      },
-      {
-        name: "Resume Portfolio",
-        description: "A sleek personal resume site to showcase professional achievements and projects.",
-        link: "https://resumeav1.netlify.app/"
+  <!-- Smoke Background -->
+  <script>
+    const canvas = document.getElementById('smoke');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let particles = [];
+
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = canvas.height + Math.random() * 100;
+        this.size = Math.random() * 20 + 10;
+        this.speedY = Math.random() * -1 - 0.5;
+        this.alpha = Math.random() * 0.2 + 0.05;
       }
-    ];
-
-    const blogs = [
-      {
-        title: "Why MERN Stack is the Future",
-        summary: "Explore why MERN dominates the full-stack development world.",
-        content: "MERN stack offers a JavaScript-based unified platform to build robust web applications..."
-      },
-      {
-        title: "Improving eCommerce UX with React",
-        summary: "Key tips for optimizing eCommerce user interfaces.",
-        content: "Using React’s component-based architecture, you can streamline checkout flows, improve page speed..."
+      update() {
+        this.y += this.speedY;
+        if (this.y < 0) {
+          this.y = canvas.height + Math.random() * 100;
+          this.x = Math.random() * canvas.width;
+        }
       }
-    ];
-
-    const projectList = document.getElementById("project-list");
-    projects.forEach(p => {
-      const div = document.createElement("div");
-      div.className = "card";
-      div.innerHTML = `<h4>${p.name}</h4><p>${p.description}</p><a href="${p.link}" target="_blank">Visit</a>`;
-      projectList.appendChild(div);
-    });
-
-    const blogList = document.getElementById("blog-list");
-    blogs.forEach((b, i) => {
-      const div = document.createElement("div");
-      div.className = "card blog";
-      div.innerHTML = `
-        <h4>${b.title}</h4>
-        <p>${b.summary}</p>
-        <div class="read-more">${b.content}</div>
-        <button class="toggle-btn" onclick="toggleReadMore(${i})">Read More</button>`;
-      blogList.appendChild(div);
-    });
-
-    function toggleReadMore(index) {
-      const blogs = document.querySelectorAll(".blog");
-      blogs[index].classList.toggle("open");
+      draw() {
+        ctx.fillStyle = `rgba(255,255,255,${this.alpha})`;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
     }
 
-    function toggleMode() {
-      document.body.classList.toggle("dark");
-      document.getElementById("header").classList.toggle("dark");
-      document.querySelectorAll(".card").forEach(c => c.classList.toggle("dark"));
+    function init() {
+      for (let i = 0; i < 100; i++) {
+        particles.push(new Particle());
+      }
     }
 
-    function toggleMenu() {
-      document.getElementById("nav-links").classList.toggle("active");
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(p => {
+        p.update();
+        p.draw();
+      });
+      requestAnimationFrame(animate);
     }
+
+    init();
+    animate();
   </script>
 </body>
 </html>
