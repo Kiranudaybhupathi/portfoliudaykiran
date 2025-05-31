@@ -120,6 +120,11 @@ a:hover {
   border-radius: 12px;
   box-shadow: 0 6px 18px var(--shadow);
   transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+}
+
+.blog-card.expanded {
+  width: 100%;
 }
 
 body.dark .blog-card {
@@ -134,6 +139,15 @@ body.dark .blog-card {
   color: var(--primary);
 }
 
+.blog-content {
+  display: none;
+  margin-top: 10px;
+}
+
+.blog-card.expanded .blog-content {
+  display: block;
+}
+
 footer {
   text-align: center;
   margin-top: 40px;
@@ -145,7 +159,11 @@ footer {
   <script>
     function toggleDarkMode() {
       document.body.classList.toggle('dark');
-    }
+    }function toggleBlogDetails(index) {
+  const card = document.getElementById(`blog-${index}`);
+  card.classList.toggle('expanded');
+}
+
   </script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -185,20 +203,29 @@ footer {
 <div class="card">
   <h2>Blog</h2>
   <div class="blog-container">
-    <div class="blog-card">
+    <div class="blog-card" id="blog-1">
       <h3>5 Secrets to Building Scalable MERN Apps</h3>
-      <p>Discover how to architect your MERN stack apps like a pro – modularity, performance, and dev best practices.</p>
-      <a href="#">Read More</a>
+      <p>Discover how to architect your MERN stack apps like a pro.</p>
+      <a href="#" onclick="toggleBlogDetails(1)">Read More</a>
+      <div class="blog-content">
+        <p>Learn about advanced modular structures, separating concerns between frontend and backend, using tools like PM2 and Nginx for scaling Node.js servers, and MongoDB optimization techniques for large-scale data.</p>
+      </div>
     </div>
-    <div class="blog-card">
+    <div class="blog-card" id="blog-2">
       <h3>My Journey: From Java Basics to Full Stack</h3>
-      <p>A personal post on how I transitioned from Java backend to full-fledged full stack development with MERN.</p>
-      <a href="#">Read More</a>
+      <p>A personal post on my transition to full stack development.</p>
+      <a href="#" onclick="toggleBlogDetails(2)">Read More</a>
+      <div class="blog-content">
+        <p>I began with Java in college, developed backend APIs, then moved to Node.js and React. I share tips and resources that helped me and the key moments of my growth as a developer.</p>
+      </div>
     </div>
-    <div class="blog-card">
+    <div class="blog-card" id="blog-3">
       <h3>Deploying React + Node Apps Easily</h3>
-      <p>Step-by-step tutorial for deploying full stack apps on free platforms like Render, Vercel, and Netlify.</p>
-      <a href="#">Read More</a>
+      <p>How to deploy full stack apps on Netlify, Render & Vercel.</p>
+      <a href="#" onclick="toggleBlogDetails(3)">Read More</a>
+      <div class="blog-content">
+        <p>This guide covers CI/CD pipeline setup, GitHub integration, setting environment variables, and handling routing between frontend and backend deployments seamlessly.</p>
+      </div>
     </div>
   </div>
 </div>
