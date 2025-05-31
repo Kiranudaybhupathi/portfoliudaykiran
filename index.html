@@ -10,7 +10,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
-    /* Reset and Base */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Roboto', sans-serif;
@@ -20,8 +19,6 @@
       overflow-x: hidden;
       position: relative;
     }
-
-    /* Smoke Canvas */
     #smoke {
       position: fixed;
       top: 0; left: 0;
@@ -31,7 +28,6 @@
       opacity: 0.3;
       pointer-events: none;
     }
-
     .container {
       max-width: 1000px;
       margin: auto;
@@ -41,40 +37,33 @@
       backdrop-filter: blur(8px);
       box-shadow: 0 0 20px rgba(0,0,0,0.2);
     }
-
     h1, h2, h3 {
       text-align: center;
       margin-bottom: 20px;
       color: #fff;
     }
-
     h1 {
       font-size: 2.5rem;
       margin-top: 20px;
     }
-
     section {
       margin-top: 40px;
       padding: 20px;
       border-radius: 16px;
       background: rgba(0,0,0,0.2);
     }
-
     a {
       color: #ffd700;
       text-decoration: none;
     }
-
     a:hover {
       text-decoration: underline;
     }
-
     .projects, .blogs {
       display: grid;
       gap: 20px;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
-
     .card {
       background: rgba(255, 255, 255, 0.15);
       border-radius: 12px;
@@ -82,12 +71,10 @@
       backdrop-filter: blur(6px);
       transition: 0.3s ease;
     }
-
     .card:hover {
       transform: scale(1.03);
       background: rgba(255, 255, 255, 0.25);
     }
-
     .toggle-btn {
       position: fixed;
       top: 20px;
@@ -100,19 +87,16 @@
       cursor: pointer;
       z-index: 999;
     }
-
     .dark-mode {
       background: #0f0f0f;
       color: #ddd;
     }
-
     footer {
       text-align: center;
       margin-top: 50px;
       font-size: 0.9rem;
       color: #bbb;
     }
-
     nav {
       display: flex;
       justify-content: space-between;
@@ -123,30 +107,25 @@
       background: rgba(0,0,0,0.5);
       z-index: 999;
     }
-
     .menu {
       display: flex;
       gap: 15px;
     }
-
     .menu a {
       color: white;
       font-weight: bold;
     }
-
     .hamburger {
       display: none;
       flex-direction: column;
       cursor: pointer;
     }
-
     .hamburger div {
       width: 25px;
       height: 3px;
       background: white;
       margin: 4px;
     }
-
     @media (max-width: 768px) {
       .menu {
         display: none;
@@ -158,14 +137,17 @@
         width: 200px;
         padding: 10px;
       }
-
       .menu.active {
         display: flex;
       }
-
       .hamburger {
         display: flex;
       }
+    }
+    iframe {
+      width: 100%;
+      border-radius: 12px;
+      margin-top: 10px;
     }
   </style>
 </head>
@@ -186,6 +168,7 @@
       <a href="#capstone">Capstone</a>
       <a href="#resume">Resume</a>
       <a href="#blogs">Blogs</a>
+      <a href="#youtube">YouTube</a>
       <a href="#contact">Contact</a>
     </div>
   </nav>
@@ -244,6 +227,24 @@
           <p>Authentication, authorization, JWT, and security best practices for modern web apps.</p>
           <a href="#">Read More →</a>
         </div>
+      </div>
+    </section>
+
+    <section id="youtube" data-aos="fade-up">
+      <h2>YouTube Channel</h2>
+      <div class="card">
+        <p>🎥 My recent video on tech and insights:</p>
+        <iframe 
+          height="315" 
+          src="https://www.youtube.com/embed/MsH3SlYnzVk?autoplay=1&mute=1" 
+          title="YouTube video player" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          allowfullscreen>
+        </iframe>
+        <p style="margin-top: 10px;">
+          🔗 <a href="https://youtube.com/@udaykiran-o8r?si=IKF_MpGZ6YuXjT5k" target="_blank">Visit My Channel →</a>
+        </p>
       </div>
     </section>
 
