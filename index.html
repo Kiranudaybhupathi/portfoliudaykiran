@@ -13,7 +13,7 @@
       box-sizing: border-box;
       font-family: 'Segoe UI', sans-serif;
     }body {
-  background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+  background: linear-gradient(135deg, #f6d365, #fda085);
   color: #102a43;
   padding: 20px;
   transition: background 0.3s, color 0.3s;
@@ -54,7 +54,7 @@ body.dark h1, body.dark h2 {
 }
 
 .card {
-  background: white;
+  background: #ffffffcc;
   padding: 30px;
   border-radius: 12px;
   margin-bottom: 30px;
@@ -98,6 +98,19 @@ a:hover {
   justify-content: space-between;
   align-items: center;
   padding: 10px 0;
+  background-color: #ffe29f;
+  border-radius: 10px;
+}
+
+nav ul {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+}
+
+nav ul li a {
+  color: #102a43;
+  font-weight: bold;
 }
 
 .hamburger {
@@ -114,7 +127,6 @@ a:hover {
   nav ul {
     display: none;
     flex-direction: column;
-    list-style: none;
     margin-top: 20px;
   }
 
@@ -131,7 +143,7 @@ a:hover {
       <h1>Bhupathi Uday Kiran</h1>
       <button class="toggle-dark" onclick="toggleDarkMode()">Toggle Dark Mode</button>
     </header><nav class="nav">
-  <span class="hamburger" onclick="toggleMenu()">☰</span>
+  <span class="hamburger" onclick="toggleMenu()">☰ Menu</span>
   <ul id="menu">
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
@@ -176,10 +188,17 @@ a:hover {
     <p class="short-text">Explore upcoming trends like AI, Web3, and serverless tech shaping the dev world...</p>
     <button onclick="toggleBlog('blog1')">Read More</button>
     <div id="blog1" class="full-blog hidden">
-      <p>
-        Web development is advancing rapidly. With tools like AI-assisted coding, modern frameworks, and edge computing, developers are pushing boundaries. This blog dives deep into frontend evolution (React, Qwik), backend shifts (serverless, edge), and how to stay relevant in the new era of web development.
-      </p>
+      <p>Web development is advancing rapidly. With tools like AI-assisted coding, modern frameworks, and edge computing, developers are pushing boundaries. This blog dives deep into frontend evolution (React, Qwik), backend shifts (serverless, edge), and how to stay relevant in the new era of web development.</p>
       <button onclick="toggleBlog('blog1')">Show Less</button>
+    </div>
+  </div>
+  <div class="blog-card">
+    <h3>Mastering MERN Stack in 2025</h3>
+    <p class="short-text">Get insights on building real-world apps using MongoDB, Express, React, and Node...</p>
+    <button onclick="toggleBlog('blog2')">Read More</button>
+    <div id="blog2" class="full-blog hidden">
+      <p>The MERN stack continues to dominate full-stack development. In this blog, we explore best practices, advanced state management, performance tuning, and how to combine React Query and Next.js for ultimate flexibility.</p>
+      <button onclick="toggleBlog('blog2')">Show Less</button>
     </div>
   </div>
 </section>
