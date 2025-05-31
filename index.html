@@ -121,7 +121,7 @@
     }
     .resume-btn {
       display: inline-block;
-      margin-top: 15px;
+      margin-top: 10px;
       background: var(--primary);
       color: white;
       padding: 10px 20px;
@@ -147,6 +147,7 @@
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
+      <a href="#resume">Resume</a>
       <a href="#contact">Contact</a>
     </div>
     <button class="toggle-btn" onclick="toggleDarkMode()">🌙 Dark Mode</button>
@@ -157,7 +158,6 @@
       <h1>Bhupathi Uday Kiran</h1>
       <p style="text-align:center; font-weight: bold;">Full Stack Developer | MERN Stack & Java | E-commerce Specialist</p>
       <p>I build scalable and modern eCommerce solutions using React, Node.js, MongoDB, and Java.</p>
-      <a class="resume-btn" href="https://resumeav1.netlify.app/" target="_blank">📄 View Resume</a>
     </section>
 
     <section id="skills" class="reveal">
@@ -173,10 +173,16 @@
     <section id="projects" class="reveal">
       <h2>Projects</h2>
       <div class="project-card">
-        <strong>Ecommerce Projec</strong><br>
+        <strong>Ecommerce Project</strong><br>
         A full-featured eCommerce web app built using React, Node.js, and MongoDB.<br>
         🔗 <a href="https://ecommerceprojec.netlify.app/" target="_blank">View Live Project</a>
       </div>
+    </section>
+
+    <section id="resume" class="reveal">
+      <h2>Resume</h2>
+      <p>Click the button below to view my updated resume:</p>
+      <a class="resume-btn" href="https://resumeav1.netlify.app/" target="_blank">📄 View Resume</a>
     </section>
 
     <section id="contact" class="reveal">
@@ -195,7 +201,6 @@
     function toggleDarkMode() {
       document.body.classList.toggle('dark');
     }
-
     const reveals = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -204,7 +209,6 @@
         }
       });
     }, { threshold: 0.1 });
-
     reveals.forEach(section => observer.observe(section));
   </script>
 </body>
