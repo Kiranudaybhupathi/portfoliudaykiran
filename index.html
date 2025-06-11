@@ -8,12 +8,23 @@
   <meta name="author" content="Bhupathi Uday Kiran" />
   <title>Bhupathi Uday Kiran - Full Stack Developer</title>
 
+  <!-- ✅ Favicon -->
+  <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/1055/1055687.png" />
+
+  <!-- ✅ Open Graph -->
+  <meta property="og:title" content="Bhupathi Uday Kiran - Full Stack Developer Portfolio" />
+  <meta property="og:description" content="Explore Uday Kiran's portfolio with projects, blogs, resume, and contact info." />
+  <meta property="og:image" content="https://img.youtube.com/vi/MsH3SlYnzVk/0.jpg" />
+  <meta property="og:url" content="https://yourdomain.com" />
+  <meta name="twitter:card" content="summary_large_image" />
+
   <!-- ✅ Google AdSense Script -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4877978951285696"
     crossorigin="anonymous"></script>
 
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -22,7 +33,16 @@
       color: #fff;
       line-height: 1.6;
       overflow-x: hidden;
+      transition: background 0.3s, color 0.3s;
     }
+    body.dark {
+      background: linear-gradient(135deg, #0f0f0f, #1c1c1c);
+      color: #eaeaea;
+    }
+    body.dark a {
+      color: #00ffff;
+    }
+
     .container {
       max-width: 1000px;
       margin: auto;
@@ -109,6 +129,40 @@
         display: flex;
       }
     }
+    .center-text { text-align: center; }
+    .filter-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .filter-buttons button {
+      background: #fff;
+      color: #000;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .filter-buttons button:hover {
+      background: #ffd700;
+    }
+    .hidden {
+      display: none !important;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      margin-top: 10px;
+    }
+    input[type="submit"] {
+      background: #ffd700;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -116,7 +170,7 @@
 
   <nav>
     <h2>Welcome 👋</h2>
-    <div class="hamburger" onclick="document.querySelector('.menu').classList.toggle('active')">
+    <div class="hamburger" onclick="document.querySelector('.menu').classList.toggle('active')" aria-label="Toggle navigation" role="button" tabindex="0">
       <div></div><div></div><div></div>
     </div>
     <div class="menu">
@@ -135,7 +189,7 @@
 
   <div class="container">
     <h1>Uday Kiran</h1>
-    <p style="text-align:center;">Software Engineer</p>
+    <p class="center-text">Software Engineer</p>
 
     <section id="about">
       <h2>About Me</h2>
@@ -169,50 +223,51 @@
 
     <section id="blogs">
       <h2>Blogs</h2>
-      <div class="card">
+      <div class="filter-buttons">
+        <button onclick="filterBlogs('all')">All</button>
+        <button onclick="filterBlogs('mern')">MERN</button>
+        <button onclick="filterBlogs('career')">Career</button>
+        <button onclick="filterBlogs('tech')">Tech</button>
+      </div>
+      <div class="card mern">
         <h3>1. Why MERN Stack is Ideal for eCommerce </h3>
         <p>Explore why MongoDB, Express, React, and Node.js form the best stack for building fast, secure, and scalable eCommerce apps...</p>
       </div>
-      <div class="card">
+      <div class="card tech">
         <h3>2. Comparing Java and Node.js in 2025 </h3>
         <p>This blog explores the evolving backend battle between traditional Java and modern JavaScript runtime Node.js for scalable web apps...</p>
       </div>
-      <div class="card">
+      <div class="card mern">
         <h3>3. Securing Your MERN Application </h3>
         <p>Learn about authentication (JWT), authorization, CORS, and data validation techniques that make MERN apps secure in production...</p>
       </div>
-      <div class="card">
+      <div class="card mern">
         <h3>4. Building Real-time Features in MERN </h3>
         <p>Understand how to add real-time chat, notifications, and live updates using Socket.IO and WebSockets with MERN stack...</p>
       </div>
-      <div class="card">
+      <div class="card mern tech">
         <h3>5. DevOps for MERN Projects</h3>
-        <p>How CI/CD, GitHub Actions, Docker, and deployment best practices take your MERN project from development to live production...</p><!-- Existing blogs (1 to 5) already present above -->
-
-<div class="card">
-  <h3>6. Understanding State Management in React</h3>
-  <p>A beginner-friendly guide to managing state in large React applications using Context API, Redux Toolkit, and best practices.</p>
-</div>
-
-<div class="card">
-  <h3>7. Top 10 GitHub Repositories Every Developer Should Star</h3>
-  <p>From frontend libraries to productivity tools, explore the most useful and trending repositories every developer must know in 2025.</p>
-</div>
-
-<div class="card">
-  <h3>8. How to Ace Full Stack Developer Interviews</h3>
-  <p>Detailed preparation strategy, real interview questions, and tips to crack MERN Stack and Java backend developer roles in 2025.</p>
-</div>
-
-<div class="card">
-  <h3>9. Progressive Web Apps (PWAs) with React</h3>
-  <p>Learn how to turn your React project into a fast, offline-capable PWA with service workers and manifest files.</p>
-</div>
-
-<div class="card">
-  <h3>10. Why TypeScript is Dominating Modern Web Development</h3>
-  <p>An in-depth explanation of why TypeScript improves scalability, reduces bugs, and has become essential in large React and Node.js projects.</p>
-</div>
+        <p>How CI/CD, GitHub Actions, Docker, and deployment best practices take your MERN project from development to live production...</p>
+      </div>
+      <div class="card tech">
+        <h3>6. Understanding State Management in React</h3>
+        <p>A beginner-friendly guide to managing state in large React applications using Context API, Redux Toolkit, and best practices.</p>
+      </div>
+      <div class="card tech">
+        <h3>7. Top 10 GitHub Repositories Every Developer Should Star</h3>
+        <p>From frontend libraries to productivity tools, explore the most useful and trending repositories every developer must know in 2025.</p>
+      </div>
+      <div class="card career">
+        <h3>8. How to Ace Full Stack Developer Interviews</h3>
+        <p>Detailed preparation strategy, real interview questions, and tips to crack MERN Stack and Java backend developer roles in 2025.</p>
+      </div>
+      <div class="card mern tech">
+        <h3>9. Progressive Web Apps (PWAs) with React</h3>
+        <p>Learn how to turn your React project into a fast, offline-capable PWA with service workers and manifest files.</p>
+      </div>
+      <div class="card tech">
+        <h3>10. Why TypeScript is Dominating Modern Web Development</h3>
+        <p>An in-depth explanation of why TypeScript improves scalability, reduces bugs, and has become essential in large React and Node.js projects.</p>
       </div>
     </section>
 
@@ -220,7 +275,7 @@
       <h2>YouTube Channel</h2>
       <div class="card">
         <p>🎥 Check out my channel for tech videos, tutorials, and career advice.</p>
-        <img src="https://img.youtube.com/vi/MsH3SlYnzVk/0.jpg" alt="YouTube Thumbnail" style="width:100%; border-radius:12px; margin-top:10px;" />
+        <img src="https://img.youtube.com/vi/MsH3SlYnzVk/0.jpg" alt="Thumbnail of YouTube video by Uday Kiran" style="width:100%; border-radius:12px; margin-top:10px;" />
         <p style="margin-top: 10px;">
           🔗 <a href="https://youtube.com/@udaykiran-o8r?si=atXXjWIe1Bc1L3og" target="_blank">Visit My Channel →</a>
         </p>
@@ -230,13 +285,21 @@
     <section id="contact">
       <h2>Contact</h2>
       <div class="card">
-        <p>📧 Email: udaykiranbhupathi5@gmail.com</p>
+        <form action="https://formspree.io/f/mwkggkjg" method="POST">
+          <label for="name">Name:</label>
+          <input type="text" name="name" required />
+          <label for="email">Email:</label>
+          <input type="email" name="email" required />
+          <label for="message">Message:</label>
+          <textarea name="message" rows="5" required></textarea>
+          <input type="submit" value="Send Message" />
+        </form>
+        <p style="margin-top:10px;">📧 udaykiranbhupathi5@gmail.com</p>
         <p>🔗 <a href="https://www.linkedin.com/in/uday-kiran" target="_blank">LinkedIn</a></p>
         <p>💻 <a href="https://github.com/Kiranudaybhupathi" target="_blank">GitHub</a></p>
       </div>
     </section>
 
-    <!-- ✅ Privacy Policy Section -->
     <section id="privacy">
       <h2>Privacy Policy</h2>
       <div class="card">
@@ -245,7 +308,6 @@
       </div>
     </section>
 
-    <!-- ✅ Terms and Conditions Section -->
     <section id="terms">
       <h2>Terms and Conditions</h2>
       <div class="card">
@@ -254,7 +316,6 @@
       </div>
     </section>
 
-    <!-- ✅ Disclaimer Section -->
     <section id="disclaimer">
       <h2>Disclaimer</h2>
       <div class="card">
@@ -268,7 +329,19 @@
     </footer>
   </div>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init();</script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+  <script>
+    AOS.init();
+
+    function filterBlogs(category) {
+      const cards = document.querySelectorAll("#blogs .card");
+      cards.forEach(card => {
+        card.classList.remove("hidden");
+        if (category !== "all" && !card.classList.contains(category)) {
+          card.classList.add("hidden");
+        }
+      });
+    }
+  </script>
 </body>
 </html>
